@@ -1,0 +1,182 @@
+\documentclass[oneside]{book} %oneside消除奇偶页出现的空页问题，页眉也会随之改变
+\usepackage[zihao=-4]{ctex} %引入中文宏包
+\usepackage{ulem}%提供\uline命令引入高低一致的下划线
+\usepackage{amsmath}%数学公式排版
+\usepackage{amssymb}%用命令 \mathbb
+\usepackage{geometry}%编辑页面边距
+\usepackage{pifont}%编辑带圈数字
+\usepackage{fancyhdr}%风格
+\usepackage[backref]{hyperref}%超链接
+\usepackage{color}%字体颜色
+\usepackage{extarrows}%输入带文字的长等号
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage[strict]{changepage} % 提供一个 adjustwidth 环境
+\usepackage{framed} % 实现方框效果
+\usepackage{amsthm}
+
+\hypersetup{colorlinks=true,linkcolor=cyan,anchorcolor=megenta,citecolor=yellow}
+\geometry{right=2.5cm,left=2.5cm,top=2.5cm,bottom=2.5cm}
+\renewcommand{\headrulewidth}{0pt}%去掉页眉分划
+\pagestyle{fancy}
+\setcounter{chapter}{-1}%将章节编号变为从0开始
+
+
+% ------------------******-------------------
+\newtheorem{lemma}{推论}[section]  %推论
+% environment derived from framed.sty: see leftbar environment definition
+\definecolor{lashade}{rgb}{0.97,0.96,0.99} % 方框底部颜色
+% ------------------******-------------------
+% 注意行末需要把空格注释掉，不然画出来的方框会有空白竖线
+\newenvironment{la}{%
+\def\FrameCommand{%
+\hspace{1pt}%
+{\color{RoyalPurple}\vrule width 2pt}%竖线颜色
+{\color{lashade}\vrule width 4pt}%
+\colorbox{lashade}%
+}%
+\MakeFramed{\advance\hsize-\width\FrameRestore}%
+\noindent\hspace{-4.55pt}% disable indenting first paragraph
+\begin{adjustwidth}{}{7pt}%
+\vspace{2pt}\vspace{2pt}%
+\normalfont %环境字体设置
+}
+{%
+\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\newtheorem*{example}{例}
+\newtheorem{examp}{例}
+\definecolor{egshade}{rgb}{0.96,0.96,0.96}% 
+\newenvironment{eg}{%
+\def\FrameCommand{%
+\hspace{1pt}%
+{\color{Gray}\vrule width 2pt}%竖线颜色
+{\color{egshade}\vrule width 4pt}%
+\colorbox{egshade}%
+}%
+\MakeFramed{\advance\hsize-\width\FrameRestore}%
+\noindent\hspace{-4.55pt}% 
+\begin{adjustwidth}{}{7pt}%
+\vspace{2pt}\vspace{2pt}%
+\normalfont %环境字体设置
+}
+{%
+\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\newtheorem{definition}{定义}[section]  
+\newtheorem{defini}{}
+\newtheorem{theorem}{定理}[section]  
+\newtheorem{theo}{}  
+\definecolor{tdshade}{rgb}{0.94,0.97,0.93} % 
+\newenvironment{td}{%
+\def\FrameCommand{%
+\hspace{1pt}%
+{\color{Green}\vrule width 2pt}%竖线颜色
+{\color{tdshade}\vrule width 4pt}%
+\colorbox{tdshade}%
+}%
+\MakeFramed{\advance\hsize-\width\FrameRestore}%
+\noindent\hspace{-4.55pt}% 
+\begin{adjustwidth}{}{7pt}%
+\vspace{2pt}\vspace{2pt}%
+\normalfont %
+}
+{%
+\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+
+\newtheorem{warning}{注}[section]  
+\definecolor{washade}{rgb}{0.99,0.95,0.94} % 方框底部颜色
+\newenvironment{wa}{%
+\def\FrameCommand{%
+\hspace{1pt}%
+{\color{LightCoral}\vrule width 2pt}%竖线颜色
+{\color{washade}\vrule width 4pt}%
+\colorbox{washade}%
+}%
+\MakeFramed{\advance\hsize-\width\FrameRestore}%
+\noindent\hspace{-4.55pt}% disable indenting first paragraph
+\begin{adjustwidth}{}{7pt}%
+\vspace{2pt}\vspace{2pt}%
+\normalfont %
+}
+{%
+\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+
+
+
+
+% ------------------******-------------------
+
+\begin{document} 
+
+\tableofcontents %生成目录
+\chapter{导言}
+\input{Preface/Preface.tex}
+\chapter{第一章 \ 集合}
+\paragraph{
+本章的新内容是无限多个集合的并与交，掌握它是学习实变函数的一项基本功
+\\
+$Cantor$在19实际创立“集合论”，对无限集合也以大小、多少来分
+\\
+实变函数论建立在实数理论和集合论基础之上，本章含有大量证明去理解集合语言}
+\newpage
+\section{集合的表示} 
+\input{Chapter1/1.1.tex}
+\newpage
+\section{集合的运算}
+\input{Chapter1/1.2.tex}
+\newpage
+\section{对等与基数}
+\input{Chapter1/1.3.tex}
+\newpage
+\section{可数集合}
+\input{Chapter1/1.4.tex}
+\newpage
+\section{不可数集合}
+\input{Chapter1/1.5.tex}
+
+\chapter{第二章 \ 点集}
+\paragraph{
+本章主要介绍集合内各元素之间的关系，研究能够度量元素间距离的集合，重点考察度量空间这一概念
+}
+
+\newpage 
+\section{度量空间，n维欧式空间}
+\input{Chapter2/2.1.tex}
+\newpage
+\section{聚点，内点，界点}
+\input{Chapter2/2.2.tex}
+\newpage
+\section{开集，闭集，完备集}
+\section{直线上的开集、闭集及完备集的构造}
+\section{Cantor三分集}
+
+\chapter{第三章 \ 测度论} 
+\section{外测度}
+\section{可测集}
+\section{可测集类}
+\section{不可测集*}
+
+\chapter{第四章 \ 可测函数} 
+\section{可测函数及其性质}
+\section{Eropob定理}%Егоров 俄语宏包没下载
+\section{可测函数的构造}
+\section{依测度收敛}
+
+\chapter{第五章 \ 积分论} 
+\section{Riemann积分的局限性，Lebesgue积分简介}
+\section{非负简单函数的Lebesgue积分}
+\section{非负可测函数的Lebesgue积分}
+\section{一般可测函数的Lebesgue积分}
+\section{Riemann积分和Lebesgue积分}
+\section{Lebesgue积分的几何意义，Fubini定理}
+
+\chapter{附录}
+
+
+\end{document}
