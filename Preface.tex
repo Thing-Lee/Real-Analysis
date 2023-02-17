@@ -1,0 +1,135 @@
+\begin{eg}
+\noindent \pmb{例：$Dirichlet$函数在$Riemann$意义下不可积.} 
+\[ D(x) = 
+\begin{cases} 
+    1 & ,\text{if } x \in  [0,1] \cap \mathbb{Q} \\ 
+    0 & ,\text{if } x \in [0,1]\setminus \mathbb{Q} 
+\end{cases} \]
+\end{eg}
+\noindent 解：
+\par
+上积分：
+\[\overline{\int_{a}^{b}} f(x) \,dx = \lim_{\left\lVert T\right\rVert  \to 0} \sum_{i = 1}^{n} M_{i}\Delta x_{i} = 1\]
+\par
+下积分：
+\[\underline{\int_{a}^{b}} f(x) \,dx = \lim_{\left\lVert T\right\rVert  \to 0} \sum_{i = 1}^{n} m_{i}\Delta x_{i} = 0\]
+\par
+对 $\forall\left\lVert T\right\rVert$, 有
+\[\sum_{i = 1}^{n} w_{i}\Delta x_{i} = 1\]
+\par
+第一充要条件和第二充要条件都不满足
+\\ \hspace*{\fill}\\
+\pmb{积分与极限交换次序（一般要求一致收敛）}
+\begin{eg}
+\pmb{例：设$\{x_{n}\}$为$[0,1]$中全体有理数，作$[0,1]$上的函数列}
+\[ f_{n}(x) = 
+\begin{cases} 
+    1 & ,\text{if } x \in \{r_{1},r_{2},r_{3},\dots,r_{n}\}\\ 
+    0 & ,\text{if } x \in [0,1]\setminus \{r_{1},r_{2},r_{3},\dots,r_{n}\}
+\end{cases} \]
+\end{eg}
+\noindent 解：
+\par
+对$\forall x_{0} \in [0,1]$
+\par
+\ding{172} \ 若$x_{0} = r_{i} \ (i=1,\dots,n)$
+\par
+\quad \ 令$\delta = min\{\left\lvert x_{0}-r_{j}\right\rvert :j = 1,\dots,n,\land j\neq i\}$
+\par
+\quad \ 则$\forall x \in \cup _{\circ}(x_{0};\delta ) , f_{n}(x) = 0 ,\therefore \lim \limits_{x \to x_{0}}f_{n}(x)= 0$
+\par
+\quad \ $x_{0}$是$f_{n}(x)$的可去间断点
+\par
+\ding{173} \ 若$x_{0} \neq r_{i} \ (i=1,\dots,n)$
+\par
+\quad \ 令$\delta = min\{\left\lvert x_{0}-r_{i}\right\rvert :i = 1,\dots,n\} > 0$
+\par
+\quad \ 则$\forall x \in \cup(x_{0};\delta ) , f_{n}(x) = 0 ,\therefore \lim \limits_{x \to x_{0}}f_{n}(x)= 0 = f_{n}(x_{0})$
+\par
+\quad \ 故$f_{n}(x)$在$x_{0}$点处连续
+\par
+综上，$f_{n}(x)$在$[0,1]$有界且有且只有有限个间断点
+\par
+故$f_{n}(x)$在$[0,1]$上$Riemann$可积
+
+
+\begin{eg}
+\pmb{不$Riemann$可积:}
+\[ \lim_{n \to \infty} f_{n}(x) = D(x) = 
+\begin{cases} 
+    1 & ,\text{if } x \in  [0,1] \cap \mathbb{Q} \\ 
+    0 & ,\text{if } x \in [0,1]\setminus \mathbb{Q} 
+\end{cases} \]
+\end{eg}
+\noindent 解：
+\par
+对$\forall x_{0} \in [0,1]$
+\par
+\ding{172} \ 若$x\notin \mathbb{Q} $
+\par
+\quad \ 则对$\forall n , f_{n}(x) = 0 , \ \therefore \lim \limits_{n \to \infty}f_{n}(x) = 0 = D(x)$
+\par
+\ding{173} \ 若$x\in \mathbb{Q} $
+\par
+\quad \ 则$\exists N \in \mathbb{N} ^{+} , s.t. \ x = r_{N}$
+\par
+\quad \ 对$\forall n > N , x \in \{r_{1},\dots,r_{n}\} , \ \therefore f_{n}(x) = 1$
+\par
+\quad \ 故$\lim \limits_{n \to \infty}f_{n}(x) = 1 = D(x)$
+\\ \hspace*{\fill}\\
+故对一般收敛函数列，在$Riemann$积分意义下极限运算与积分运算不一定可交换顺序
+\\
+即：
+\[\lim_{n \to \infty} \int_{a}^{b} f_{n}(x) \,dx \stackrel{?}{=} \int_{a}^{b} \lim_{n \to \infty}  f_{n}(x) \,dx   \]
+
+\newpage
+\pmb{$Lebesgue$积分思想简介}
+\begin{eg}
+\pmb{问题：求$y = f(x)$，$x \in [a,b]$与$x$轴，$x = a$，$x = b$所围的曲边梯形面积}
+\end{eg}
+\noindent \pmb{法1：$Riemann$积分}
+\par
+作定义域$[a,b]$的分割$T$，$a = x_{0} < x_{1} < \dots <x_{n} = b$
+\[M_{i} = \sup \limits_{[x_{i-1},x_{i}]}f(x)\]
+\[m_{i} = \inf \limits_{[x_{i-1},x_{i}]}f(x)\]
+\par
+上和：\[\mathcal{S}(T) = \sum \limits_{i = 1}^{n}M_{i}\Delta x_{i}\]
+\par
+下和：\[S(T) = \sum \limits_{i = 1}^{n}M_{i}\Delta x_{i}\]
+\par
+若\[\lim \limits_{\left\lVert T\right\rVert  \to 0} \mathcal{S}(T) =  \lim \limits_{\left\lVert T\right\rVert  \to 0} S(T)\]
+\par
+则$f$在$[a,b]$上$Riemann$可积
+\par
+曲边梯形面积：\[S = (R) \int_{a}^{b} f(x) \,dx \]
+\\
+\pmb{法2：$Lebesgue$积分} 
+\par
+作值域$[c,d]$的分割$T$，$c = y_{0} < y_{1} < \dots <y_{n} = d$
+\par
+记
+\[E_{i} = \{x \in [a,b] : y_{i-1} \leqslant f(x) \leqslant y_{i}\}\]
+\par
+积分和$\sum \limits_{i = 1}^{n} y_{i} \times E_{i} $的长度
+\par
+当$\left\lVert T \right\rVert \to 0$时，$S=\lim \limits_{\left\lVert T\right\rVert  \to 0} \sum \limits_{i = 1}^{n} y_{i} \times E_{i}$
+\begin{eg}
+\pmb{例：$Dirichlet$函数在$Lebesgue$意义下可积}
+\[ D(x) = 
+\begin{cases} 
+    1 & ,\text{if } x \in  [0,1] \cap \mathbb{Q} \\ 
+    0 & ,\text{if } x \in [0,1]\setminus \mathbb{Q} 
+\end{cases} \]
+\end{eg}
+\noindent 解：
+\par
+对$\forall$值域分割$T$：有
+\[0 = y_{0} < y_{1} < \dots <y_{n} = 1\]
+\par
+那么
+\[E_{i} = \{x \in [a,b] : y_{i-1} \leqslant f(x) \leqslant y_{i}\}\]
+\par
+所以
+\begin{center}
+$\lim \limits_{\left\lVert T\right\rVert  \to 0} \sum \limits_{i = 1}^{n} y_{i} \times E_{i}$的长度$=$ $[0,1] \cap \mathbb{Q} $的长度
+\end{center}

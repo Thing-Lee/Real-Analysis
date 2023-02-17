@@ -1,0 +1,31 @@
+\pmb{本节重点：集合语言表示数学问题}
+\begin{eg}
+\pmb{例9：}若$f(x)$在$\mathbb{R}$上定义，且在$\mathbb{R}$上有上界$M$，则\[\mathbb{R} = \underbrace{\{x : f(x) \leqslant M\}}_\text{A} = \underbrace{\{x : f(x) \leqslant M + 1\}}_\text{B}\]
+\end{eg}
+\noindent 证明：
+\par
+显然：
+\[A\subset B\subset \mathbb{R}\]
+\par
+下证：
+\[\mathbb{R}\subset A\]
+\par
+因为$f(x)$在$\mathbb{R}$上有上界$M$
+\par
+故对$\forall x \in \mathbb{R}$，有$f(x) \leqslant M$
+\par
+故$\mathbb{R} \subset A$
+\par
+故$A = B = \mathbb{R}$
+\begin{eg} 
+\pmb{例10：}若$f(x)$在$\left[a,b\right]$上连续，则$f(\left[a,b\right]) = \left[m,M\right]$，其中$m = \min \{f(x) : x \in \left[a,b\right]\}$，$M = \max \{f(x) : x \in \left[a,b\right]\}$
+\end{eg}
+\noindent 证明：
+\par \ding{172} 对$\forall x \in \left[a,b\right]$，有$m \leqslant f(x) \leqslant M$
+\par \quad 所以$f(\left[a,b\right] \subset \left[m,M\right])$
+\par \ding{173} 对$\forall y \in \left[m,M\right]$
+\par \quad \ \romannumeral1. 若$y = m$，则$\exists x_{1} \in \left[a,b\right]$，$s.t. \ y = f(x_{1}) \in f(\left[a,b\right])$
+\par \quad \ \romannumeral2. 若$y = M$，则$\exists x_{2} \in \left[a,b\right]$，$s.t. \ y = f(x_{2}) \in f(\left[a,b\right])$
+\par \quad \ \romannumeral3. 若$y \in \left[m,M\right]$，由介值性定理可知，$\exists x \in [x_{1},x_{2}]$，$s.t. \ y = f(x) \in f(\left[a,b\right])$
+\par \quad 所以 $\left[m,M\right] \subset f(\left[a,b\right])$
+\par 综上：$f(\left[a,b\right]) = \left[m,M\right]$

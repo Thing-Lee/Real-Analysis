@@ -1,0 +1,201 @@
+\pmb{本节重点：明晰不可数集合的几种常见解题思路}
+\begin{td}
+\pmb{定义：}不是可数集合的无限集合称为不可数集合    
+\end{td}
+
+\begin{td}
+\pmb{Theorem \ 1：}实数集$\mathbb{R}$是不可数集    
+\end{td}
+\noindent 证明：
+\par 已知$\mathbb{R} \thicksim \left(0,1\right) $，故只需证$\left(0,1\right) $是不可数集
+\par $\looparrowright$ 正规表示：$\left(0,1\right) $中的任意实数$a$可唯一表示为十进位无穷小数
+$$a = 0.a_{1}a_{2}\dots a_{n}\dots = \sum \limits_{n=1}^{\infty}\dfrac{a_{n}}{10^{n}} \quad \left(\forall n \in \mathbb{N},a_{n} \in \left\{0,1,\dots,9\right\} \right) $$
+\par \quad \ 其中小数位不全为9也不以0为循环节, \ $\left(0,1\right) $中实数与其正规表示一一对应$\looparrowleft $
+\\ 反证法：假设$\left(0,1\right) $是可数集，则其可排成无穷序列，即
+$$\left(0,1\right) = \left\{a^{\left(1\right) },a^{\left(2\right) },\dots,a^{\left(n\right) },\dots\right\} $$
+\par \quad \quad 对$\forall n \in \mathbb{N}$，有:
+\begin{align*}
+    a^{\left(1\right) } & = 0.\textcolor{cyan}{a_{1}^{\left(1\right)}}a_{2}^{\left(1\right)}a_{3}^{\left(1\right)}\dots a_{n}^{\left(1\right)} \dots\\
+    a^{\left(2\right) } & = 0.a_{1}^{\left(2\right)}\textcolor{cyan}{a_{2}^{\left(2\right)}}a_{3}^{\left(2\right)}\dots a_{n}^{\left(2\right)} \dots\\
+    a^{\left(3\right) } & = 0.a_{1}^{\left(3\right)}a_{2}^{\left(3\right)}\textcolor{cyan}{a_{3}^{\left(3\right)}}\dots a_{n}^{\left(3\right)} \dots\\
+    \vdots \\
+    a^{\left(n\right) } & = 0.a_{1}^{\left(n\right)}a_{2}^{\left(n\right)}a_{3}^{\left(n\right)}\dots \textcolor{cyan}{a_{n}^{\left(n\right)}} \dots
+\end{align*}
+\par \quad \quad 利用对角线上的数字构造无穷小数
+$$a = 0.a_{1}a_{2}\dots a_{n} \dots \quad among: \ a_{n} = 
+\begin{cases} 
+    1 & ,\text{if } a_{n}^{\left(n\right)} \neq 1\\ 
+    2 & ,\text{if } a_{n}^{\left(n\right)} = 1
+\end{cases} $$
+\par \quad \quad 则$a \in \left(0,1\right)$，对$\forall n \in \mathbb{N}$，有$a \neq a^{\left(n\right)}$
+\par \quad \quad 即$\left(0,1\right) \neq \left\{a^{\left(1\right) },a^{\left(2\right) },\dots,a^{\left(n\right) },\dots\right\} $，$\left(0,1\right)$不能表示为无穷序列，矛盾
+\par \quad \quad 故假设不成立，$\left(0,1\right)$是不可数集，即$\mathbb{R}$是不可数集
+
+\begin{la}
+\pmb{推论1：}若用$c$表示实数集$\mathbb{R}$的基数，$a$表示正整数集$\mathbb{Z}^{+}$的基数，则$c > a$，
+\par \quad \quad 称$c$为连续基数，记为$\aleph $
+%%推论1有一个口述证明，还未整理%%    
+\end{la}
+
+\begin{td}
+\pmb{Theorem \ 2：}任意区间$\left(a,b\right) $，$\left[a,b\right) $，$\left(a,b\right] $，$\left[a,b\right] $，$\left(0,\infty\right) $，$\left[0,\infty\right) $，均具有连续基数$c$，
+\par \quad \quad \quad \quad 其中$a < b$    
+\end{td}
+\noindent 证明：
+\par 令映射$\varphi : \left(a,b\right) \to \left(0,1\right) $，$x \mapsto \dfrac{x - a}{b - a}$
+\par 易知$\varphi$是双射，则有$\left(a,b\right) \thicksim \left(0,1\right) \thicksim \mathbb{R}$
+\par 已知$\left(a,b\right) \subset \left(a,b\right] \subset \left[a,b\right] \subset \mathbb{R}$ 且$\left(a,b\right) \thicksim \mathbb{R}$
+\par 由$Bernstein$定理推论可知，$\left(a,b\right) \thicksim \left(a,b\right] \thicksim \left[a,b\right] \thicksim \mathbb{R}$ 
+\par 同理可得，$\left(a,b\right) \thicksim \left[a,b\right) \thicksim \mathbb{R}$ 
+\par 已知$\left(0,1\right) \subset \left(0,\infty\right) \subset \left[0,\infty\right) \subset \mathbb{R}$ 且$\left(0,1\right) \thicksim \mathbb{R}$
+\par 故$\left(0,1\right) \thicksim \left(0,\infty\right) \thicksim \left[0,\infty\right) \thicksim \mathbb{R}$
+\par 综上：区间均具有连续基数$c$
+
+\begin{td}
+\pmb{Theorem \ 3：}设$A_{1},A_{2},\dots,A_{n},\dots$是一列\footnote{注：一列集合暗指可数个，一族集合情况未知}互不相交的集合，它们的基数都是$c$，
+\par \quad \quad \quad \quad 则$\bigcup \limits_{n=1}^{\infty}A_{n}$的基数也是$c$ 
+\normalsize    
+\end{td}
+\noindent 证明：
+\par 对$\forall n \in \mathbb{N}$，令$I_{n} = \left[n-1,n\right) $，则$I_{1},I_{2},\dots,I_{n},\dots$互不相交
+\par 由Th2可知，对$\forall n \in \mathbb{N}$，有$\overline{\overline{I_{n}} } = c$，故对$\forall n \in \mathbb{N}$，有$A_{n} \thicksim I_{n}$
+\par 由1.3引理可知，$\bigcup \limits_{n=1}^{\infty}A_{n} \thicksim \bigcup \limits_{n=1}^{\infty}I_{n} = \left[0,\infty\right) $
+\par 故$\overline{\overline{\bigcup \limits_{n=1}^{\infty}A_{n}}} = c $
+
+\begin{td}
+\pmb{Theorem \ 4：}设有一列集合$\left\{A_{n} : n \in \mathbb{Z}^{+}\right\} $，$\overline{\overline{A_{n}} } = c \ \left(n = 1,2,\dots\right) $，而$A = \prod \limits_{n=1}^{\infty}A_{n}$，
+\par \quad \quad \quad \quad 则$\overline{\overline{A}} = c$    
+\end{td}
+\noindent 证明\footnote{证明基数值时，若找不到对等关系，可以找单射或满射，利用1.3注，建立两个不等式关系，最后变成等式}：
+\par \ding{172} 已知对$\forall n \in \mathbb{Z}^{+}$，有$\overline{\overline{A_{n}} } = c$
+\par \quad 故对$\forall n \in \mathbb{Z}^{+}$，有$A_{n} \thicksim \left(0,1\right) $，则$\exists \varphi_{n} : \left(0,1\right) \stackrel{1-1}{\to} A_{n}$
+\par \quad 令$\varphi : \left(0,1\right) \to A$，$x \mapsto \varphi (x) = \left(\varphi _{1}(x),\varphi _{2}(x),\dots,\varphi _{n}(x),\dots\right) $，易知$\varphi$是单射
+\par \quad 故由1.3注可知，$\overline{\overline{A}} \geqslant \overline{\overline{\left(0,1\right)}} = c$
+\par \ding{173} 对$\forall \overline{x} \in A$，记$\overline{x} = \left(\overline{x_{1}} ,\overline{x_{2}}, \dots,\overline{x_{n}} , \dots\right)$，其中对$\forall n \in \mathbb{Z}^{+}$，有$\overline{x_{n}} \in A_{n} $
+\par \quad 对$\forall n \in \mathbb{Z}^{+}$，令$x_{n} = \varphi^{-1}_{n}\left(\overline{x_{n}}\right) \in \left(0,1\right) $ 
+\par \quad 对$\forall n \in \mathbb{Z}^{+}$，有：
+\begin{align*}
+    x_{1} & = 0.x_{11}x_{12}x_{13}\dots \\
+    x_{2} & = 0.x_{21}x_{22}x_{23}\dots \\
+    x_{3} & = 0.x_{31}x_{32}x_{33}\dots \\
+    \vdots
+\end{align*}
+\par \quad 令$\psi : A \to \left(0,1\right) $，$\overline{x} \mapsto 0.x_{11}x_{12}x_{21}x_{31}x_{22}x_{13} \dots$，易知$\psi$是单射
+\par \quad $\looparrowright$ 若$\overline{x} , \overline{y} \in A $，且$\overline{x} = \overline{y}$，则$\exists n \in \mathbb{Z}^{+}$，有$\overline{x_{n}} \neq \overline{y_{n}}$，故$x_{n} \neq y_{n}$
+\par \quad \quad 故$\exists m \in \mathbb{Z}^{+}$，$s.t. \ x_{nm} \neq y_{nm}$，即$\psi \left(\overline{x} \right) \neq \psi \left(\overline{y} \right)$ \quad \quad \quad \quad \quad$\looparrowleft $
+\par \quad 故由1.3注可知，$\overline{\overline{A}} \leqslant \overline{\overline{\left(0,1\right)}} = c$
+\par 综上：由$Bernstein$定理，$\overline{\overline{A}} = c$
+
+\begin{td}
+\pmb{定义 \ }设$n$是正整数，由$n$个实数$x_{1},x_{2},\dots,x_{n} $按确定的次序排成的数组$\left(x_{1},x_{2},\dots,x_{n}\right) $的全体称为\uline{$n$维欧几里得空间}(简称\uline{欧式空间})，记为$\mathbb{R}^{n}$
+\par \quad 每个组$\left(x_{1},x_{2},\dots,x_{n}\right) $称为\uline{欧几里得空间的点}，又称$x_{i}$为点$\left(x_{1},x_{2},\dots,x_{n}\right) $的第$i$个\uline{坐标}，
+记：
+$$\mathbb{R}^{\infty} = \left\{\left(x_{1},x_{2},\dots,x_{n}\right) : x_{i} \in \mathbb{R} , i = 1,2,\dots\right\} $$    
+\end{td}
+
+\begin{la}
+\pmb{推论：}$\mathbb{R}^{\infty}$的基数为$c$    
+\end{la}
+\noindent 证明： $\underbrace{\mathbb{R} \times \mathbb{R} \times \dots}_\text{可数个}$
+
+\begin{td}
+\pmb{Theorem \ 5：}$n$维欧几里得空间$\mathbb{R}^{n}$的基数为$c$    
+\end{td}
+\noindent 证明：
+\par \ding{172}令$\varphi _{1} : \mathbb{R}^{n} \to \mathbb{R}^{\infty}$，$x = \left(x_{1},\dots,x_{n} \right) \mapsto \left(x_{1},\dots,x_{n},0,0,\dots\right)  $
+\par \quad 易知$\varphi_{1} $是单射，即$\overline{\overline{\mathbb{R}^{n}}} \leqslant \overline{\overline{\mathbb{R}^{\infty}}} = c$
+\par \ding{173}令$\varphi _{2} : \mathbb{R} \to \mathbb{R}^{n}$，$x \mapsto \left(x,0,\dots,0\right)  $
+\par \quad 易知$\varphi_{2} $是单射，即$\overline{\overline{\mathbb{R}^{n}}} \geqslant  \overline{\overline{\mathbb{R}}} = c$
+\par 由$Bernstein$定理，$\overline{\overline{\mathbb{R}^{n}}} = c$
+
+\begin{la}
+\pmb{推论2：}设有一列集合$B_{n} : n \in \mathbb{Z}^{+}$，$B_{n} = \left\{0,1\right\} \left(n = 1,2,\dots\right) $，而$B = \prod \limits_{n=1}^{\infty}B_{n}$，则$\overline{\overline{B}} = c$    
+\end{la}
+\noindent 证明：
+\par \ding{172} 对$\forall n \in \mathbb{Z}^{+}$，令$A_{n} = \left(0,1\right) $，令$f : \left\{0,1\right\} \to \left(0,1\right) ,
+\begin{cases}
+    0 &\mapsto \ 0.1  \\
+    1 &\mapsto \ 0.2
+\end{cases} $
+\par 易知$f$是单射
+\par 令$\varphi :B = \prod \limits_{n=1}^{\infty}B_{n} \to \prod \limits_{n=1}^{\infty}A_{n}$，$\left( b_{1},b_{2},\dots,b_{n},\dots \right)\mapsto \left(f(b_{1}),f(b_{2}),\dots,f(b_{n}),\dots\right) $
+\par 易知$\varphi$是单射
+\par 故$\overline{\overline{B}} \leqslant \overline{\overline{\prod \limits_{n=1}^{\infty}A_{n}}} \stackrel{Th4}{=} c$
+\par \ding{173} 对$\forall x \in \left(0,1\right) $，将$x$用二进位表示
+\par \quad $x = 0.a_{1}a_{2}\dots a_{n}$，其中对$\forall n \in \mathbb{Z}^{+}$，有$a_{n} \in \left\{0,1\right\} $，
+\par \quad $x$的小数位不全为1也不以0为循环节
+\par \quad 令$\psi : \left(0,1\right) \to B$，$x \mapsto \left(a_{1},a_{2},\dots,a_{n},\dots\right) $
+\par \quad $\looparrowright $对$\forall x , y \in \left(0,1\right) $且$x \neq y$，记$x = 0.a_{1}a_{2}\dots a_{n}\dots$，$y = b_{1}b_{2}\dots b_{n}\dots$
+\par \quad \quad \ 则$\exists n om \mathbb{Z}^{+}$，有$a_{n} \neq b_{n}$，故$\psi (x) \neq \psi (y)$，故$\psi $是单射
+\par \quad 故$\overline{\overline{B}} \geqslant \overline{\overline{\left(0,1\right) }} = c$
+\par 综上：由$Bernstein$定理，$\overline{\overline{B}} = c$
+
+\begin{wa}
+\pmb{注：}定理4，定理5和推论2分别可简记为
+$$ c^{a} = c ,\quad c^{n} = c , \quad 2^{a} = c$$
+\end{wa}
+\par Th4: $$\overline{\overline{\prod \limits_{n=1}^{\infty}A_{n}}} = c \quad \underbrace{c \cdot c\cdot c\cdot \dots} _\text{a个} = c^{a} = c$$
+\par Th5: $$\overline{\overline{\mathbb{R}^{n}}} = c \quad \underbrace{c \cdot c\cdot \dots \cdot c} _\text{n个} = c^{n} = c$$
+\par 推论2:$$\overline{\overline{\prod \limits_{n=1}^{\infty}B_{n}}} = c \quad \underbrace{2 \cdot 2\cdot 2\cdot \dots} _\text{a个} = 2^{a} = c$$
+
+\begin{td}
+    \pmb{Theorem \ 6：}设$M$是任意集合，其所有子集作成新的集合$\mu $，则$\overline{\overline{\mu }} > \overline{\overline{M}} $
+\end{td}
+\noindent 证明：
+\par 对$\mu = \left\{E : E \subset M\right\} $，令映射$\varphi : N \to \mu  ,x \mapsto \left\{x\right\} $，易知$\mu$是单射，即有$\overline{\overline{M}} \leqslant \overline{\overline{\mu }}$
+\par 下证：$\overline{\overline{M}} \neq \overline{\overline{\mu }}$
+\par 反证法：假设$\overline{\overline{M}} = \overline{\overline{\mu }}$，则$M \thicksim \mu$，故$\exists \psi : M \stackrel{1-1}{\to} \mu$
+\par \quad \quad \quad \quad 故对$\forall \alpha \in M$，令$M_{\alpha } = \psi (\alpha ) \in \mu$，则有$M_{\alpha } \subset M$
+\par \quad \quad \quad \quad 令$M' = \left\{\alpha \in M : \alpha \notin M_{\alpha }\right\} $，则$M' \subset M$，故$M' \in \mu = \psi (M)$
+\par \quad \quad \quad \quad 故$\exists \alpha ' \in M$，$s.t. \ M' = \psi (\alpha ')$
+\par \quad \quad \quad \quad \ding{172} 若$\alpha ' \in M'$，则由$M'$的定义，$\alpha ' \notin \psi (\alpha ') = M'$，矛盾
+\par \quad \quad \quad \quad \ding{173} 若$\alpha ' \notin M'$，则$\alpha ' \notin \psi (\alpha ')$，由$M'$的定义，$\alpha ' \in M'$，矛盾
+\par \quad \quad \quad \quad 故假设不成立，故$\overline{\overline{M}} \neq \overline{\overline{\mu }}$，即$\overline{\overline{M}} < \overline{\overline{\mu }}$
+
+\begin{wa}
+    \pmb{注：}集合$M$的所有子集组成的集合(幂集)记为$2^{M}$，则$\overline{\overline{M}} <\overline{\overline{2^{M}}} $
+    \par 没有最大的基数，无限集合的不同基数有无限之多
+\end{wa}
+
+\begin{eg}
+    \pmb{例1：}若$f(x)$是定义在$E$上的函数，则
+    $$\left\{x : \left\lvert f(x)\right\rvert = 0\right\} = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}} \left\{x : \left\lvert f(x)\right\rvert < \varepsilon \right\} = \bigcap \limits_{n=1}^{\infty} \left\{x : \left\lvert f(x)\right\rvert < \dfrac{1}{n} \right\} $$
+\end{eg}
+\noindent 证明：$\xrightarrow{regard \ as} \ A = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}}A_{\varepsilon } = \bigcap \limits_{n=1}^{\infty} B_{n}$
+\par 显然：$A \subset \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}}A_{\varepsilon } \subset \bigcap \limits_{n=1}^{\infty} B_{n}$
+\par 下证：$\bigcap \limits_{n=1}^{\infty} B_{n} \subset A$
+\par 对$\forall x \in \bigcap \limits_{n=1}^{\infty} B_{n} $，有对$\forall n \in \mathbb{R}$，$x \in B_{n}$，故对$\forall n \in \mathbb{R}$，有$\left\lvert f(x)\right\rvert < \dfrac{1}{n} $
+\par 令$n \to \infty$，得$\left\lvert f(x)\right\rvert \leqslant 0$，即$\left\lvert f(x)\right\rvert = 0$，故$x \in A$
+\par 故$\bigcap \limits_{n=1}^{\infty} B_{n} \subset A$
+\par 综上：$ A = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}}A_{\varepsilon } = \bigcap \limits_{n=1}^{\infty} B_{n}$
+
+\begin{eg}
+    \pmb{例2：}若$\left\{f_{n}(x)\right\} $是定义在$E$上的函数列，则 
+    \begin{align*}
+        (1)\left\{x : \lim \limits_{n \to \infty} f_{n}(x) = 0\right\} & = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}} \bigcup \limits_{N=1}^{\infty} \bigcap \limits_{n=N}^{\infty} \left\{x : \left\lvert f_{n}(x)\right\rvert < \varepsilon \right\} \\
+        & = \bigcap \limits_{k=1}^{\infty} \bigcup \limits_{N=1}^{\infty} \bigcap \limits_{n=N}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert < \dfrac{1}{k} \right\}
+    \end{align*}
+\end{eg}
+\noindent 证明：$\xrightarrow{regard \ as} \ (1) \xlongequal{1.2 \ eg12} A = B$
+\par 显然：$A \subset B$，下证：$B \subset A$
+\par 对$\forall x \in B$，则对$\forall k \in \mathbb{N}$，$\exists N \in \mathbb{N}$，对$\forall N \in \mathbb{N}$，有$\left\lvert f_{n}(x)\right\rvert < \dfrac{1}{k} \dots \dots \dots \dots $ \ding{172}
+\par 对$\forall \varepsilon > 0$，令$k = \left[\dfrac{1}{\varepsilon}\right] +1 \in \mathbb{N}$，则$k > \dfrac{1}{\varepsilon }$，即$\dfrac{1}{k} < \varepsilon $
+\par 由\ding{172}式可知，$\exists N \in \mathbb{N}$，对$\forall n \geqslant N$，有$\left\lvert f_{n}(x)\right\rvert < \dfrac{1}{k} <\varepsilon $
+\par 故$x \in \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}} \bigcup \limits_{N=1}^{\infty} \bigcap \limits_{n=N}^{\infty} \left\{x : \left\lvert f_{n}(x)\right\rvert < \varepsilon \right\} = A$
+\par 故$B \subset A$
+\par 综上：$(1) = A = B$
+
+\begin{eg}
+    \begin{align*}
+        (2)\left\{x : \lim \limits_{n \to \infty} f_{n}(x) \neq 0 \ or \nexists \right\} & = \bigcup \limits_{\varepsilon \in \mathbb{R}^{+}} \bigcap \limits_{N=1}^{\infty} \bigcup \limits_{n=N}^{\infty} \left\{x : \left\lvert f_{n}(x)\right\rvert \geqslant \varepsilon \right\} \\
+        & = \bigcup \limits_{k=1}^{\infty} \bigcap \limits_{N=1}^{\infty} \bigcup \limits_{n=N}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert \geqslant \dfrac{1}{k} \right\}
+    \end{align*}
+\end{eg}
+\noindent 证明：$\xrightarrow{regard \ as} \ (2) \xlongequal{1.2 \ eg12} A = B$
+\par 显然：$A \supset B$ ，下证：$A \subset B$
+\par 对$\forall x \in A$，$\exists \varepsilon >0$，对$\forall N \in \mathbb{N}$，$\exists n \geqslant N$，有$\left\lvert f_{n}(x)\right\rvert \geqslant \varepsilon \dots \dots \dots \dots $ \ding{173}
+\par 令$k = \left[\dfrac{1}{\varepsilon}\right] +1 \in \mathbb{N}$，则$k > \dfrac{1}{\varepsilon }$，即$\dfrac{1}{k} < \varepsilon $
+\par 由\ding{173}式可知，对$\forall N \in \mathbb{N}$，$\exists n \geqslant N$，有$\left\lvert f_{n}(x)\right\rvert \geqslant \varepsilon > \dfrac{1}{k}$
+\par 故$x \in \bigcup \limits_{k=1}^{\infty} \bigcap \limits_{N=1}^{\infty} \bigcup \limits_{n=N}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert \geqslant \dfrac{1}{k} \right\} = B$
+\par 故$A \subset B$
+\par 综上：$(2) = A = B$

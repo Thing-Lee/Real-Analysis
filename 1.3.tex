@@ -1,0 +1,154 @@
+\pmb{本节重点：理解对等本质}
+\\ \hspace*{\fill}\\
+\pmb{例2：}正奇数全体与正偶数全体对等
+\[\varphi :x\mapsto x+1\]
+\pmb{例3：}正整数全体与正偶数全体对等
+\[\varphi :x\mapsto 2x\]
+\pmb{例4：}$\left(0,1\right) $与$\mathbb{R}$对等
+\[\varphi :x\mapsto \tan \left(\pi x - \dfrac{\pi}{2}\right)\]
+\pmb{注：}例3与例4说明无限集可以与其真子集对等
+
+\begin{td}
+\pmb{Theorem \ 1：}对任意集合$A$，$B$，$C$，均有：
+\par (1)自反性：$A\thicksim A$
+\par (2)对称性：$A\thicksim B \Rightarrow B\thicksim A$
+\par (3)传递性：$A\thicksim B,B\thicksim C\Rightarrow A\thicksim C$    
+\end{td}
+\noindent 证明：
+\par (1) $\varphi :x\mapsto x$
+\par (2)已知$A\thicksim B$，故$\exists$双射$\varphi$，$s.t. \ A \to B$，所以有$\varphi ^{-1}$，$s.t. \ B \to A$，即$B\thicksim A$
+\par (3)已知$A\thicksim B$且$B\thicksim C$
+\par \quad \ 故$\exists$双射$\varphi_{1}$，$s.t. \ A \to B$且$\exists$双射$\varphi_{2}$，$s.t. \ B \to C$
+\par \quad \ 令$\varphi :A \to B \to C$，则$\varphi = \varphi _{1}\circ \varphi _{2}$
+\par \quad \ 易知$\varphi $是双射，故$A\thicksim C$
+
+\begin{wa}
+\pmb{\textcolor{red}{$\bigstar$注：}}
+\par (1)若$A \subset B$，则$\overline{\overline{A}} \leqslant \overline{\overline{B}}$
+\par (2)设$A$，$B$是两个集合，若存在$A$到$B$的单射，则$\overline{\overline{A}} \leqslant \overline{\overline{B}}$
+\par (3)设$A$，$B$是两个集合，若存在$A$到$B$的满射，则$\overline{\overline{A}} \geqslant \overline{\overline{B}}$    
+\end{wa}
+\noindent 证明：
+\par (1) (\romannumeral1)若$A\thicksim B$，则$\overline{\overline{A}} = \overline{\overline{B}}$
+\par \quad \ (\romannumeral2)若$A\nsim B$，则$A \subsetneq B$，而$A \thicksim A\subsetneq B$，故$\overline{\overline{A}} < \overline{\overline{B}}$
+\par (2) $\exists$单射$\varphi ,\ s.t. \ A \to B$
+\par \quad \ 若$\varphi :A \to \varphi (A)$是双射
+\par \quad \ 则$A \thicksim \varphi (A)$，$\overline{\overline{A}} = \overline{\overline{\varphi (A)}}$
+\par \quad \ 易知$\varphi (A)\subset B$，故$\overline{\overline{\varphi (A)}} \leqslant \overline{\overline{B}}$
+\par \quad \ 故$\overline{\overline{A}} \leqslant \overline{\overline{B}}$
+\par (3) $\exists$满射$\varphi ,\ s.t. \ A \to B$
+\par \quad \ 即对$\forall y \in B$，$\exists x \in A$，$s.t. \ y = \varphi (x)$
+\par \quad \ 在$\left\{x \in A : y = \varphi (x)\right\} $中取且只取一个元素，记为$x_{y}$，令$A_{0} = \left\{x_{y} : y \in B\right\} \subset A$
+\par \quad \ 易知$\varphi$是$A_{0} \to B$双射，故有$A_{0}\thicksim B$
+\par \quad \ 即$\overline{\overline{B}} = \overline{\overline{A_{0}}} \leqslant \overline{\overline{A}}$
+
+\begin{td}
+\pmb{Definition \ 7：}设$A$，$B$是两个集合，如果$A$不与$B$的对等，但存在$B$的真子集$B^{*}$，有$A \thicksim B^{*}$，则称$A$比$B$有较小的基数，并记为$\overline{\overline{A}} \leqslant \overline{\overline{B}}$    
+\end{td}
+
+\begin{la}
+\pmb{引理：}设$\left\{A_{\lambda } : \lambda \in \varLambda \right\}$ ，$\left\{B_{\lambda } : \lambda \in \varLambda \right\}$是两个集族，$\varLambda $是一个指标集，又$\forall \lambda  \in \varLambda $，$A_{\lambda } \thicksim B_{\lambda}$，而且$\left\{A_{\lambda } : \lambda \in \varLambda \right\}$ 中的集合两两不相交，$\left\{B_{\lambda } : \lambda \in \varLambda \right\}$中的集合两两不相交，那么
+\begin{equation}
+ \bigcup \limits_{\lambda \in \varLambda }A_{\lambda}\thicksim \bigcup \limits_{\lambda \in \varLambda }B_{\lambda}   \tag{le} \label{Th2}
+\end{equation}
+\end{la} 
+\noindent 证明：
+\par 因对$\forall \lambda \in \varLambda $，有$A_{\lambda } \thicksim B_{\lambda}$
+\par 故对$\forall \lambda \in \varLambda $，$\exists$双射$\varphi _{\lambda } : A_{\lambda }\to B_{\lambda }$
+\par 对$\forall x \in \bigcup \limits_{\lambda \in \varLambda }A_{\lambda}$，由于$\left\{A_{\lambda } \right\}$两两不相交
+\par 故$\exists \lambda \in \varLambda $，$s.t. \ x \in A_{\lambda }$
+\par 令$\varphi (x) = \varphi _{\lambda }(x) \in B_{\lambda }\subset \bigcup \limits_{\lambda \in \varLambda }B_{\lambda}$
+\par 则有$\varphi : \bigcup \limits_{\lambda \in \varLambda }A_{\lambda}\to \bigcup \limits_{\lambda \in \varLambda }B_{\lambda}$
+\par 对$\forall y \in \bigcup \limits_{\lambda \in \varLambda }B_{\lambda}$，由于$\left\{B_{\lambda }\right\} $两两不相交
+\par 故$\exists \lambda \in \varLambda $，$s.t. \ y \in B_{n}$
+\par 因双射$\varphi _{\lambda } : A_{\lambda }\to B_{\lambda }$
+\par 故$\exists x \in A_{\lambda }\subset \bigcup \limits_{\lambda \in \varLambda }A_{\lambda}$，$s.t. \ y = \varphi _{\lambda }(x)$
+\par 即$y =\varphi (x)$
+\par 故$\varphi $是双射，$\bigcup \limits_{\lambda \in \varLambda }A_{\lambda}\thicksim \bigcup \limits_{\lambda \in \varLambda }B_{\lambda}$
+
+\begin{td}
+\pmb{Theorem \ 2 \ (Bernstein定理)：}设$A$，$B$，是两个非空集合，若$A$对等于$B$的一个子集，$B$对等于$A$的一个子集，则$A$与$B$对等，即：
+\begin{center}
+    若$\overline{\overline{A}} \leqslant \overline{\overline{B}}$，$\overline{\overline{B}} \leqslant \overline{\overline{A}}$，则$\overline{\overline{A}} = \overline{\overline{B}}$ 
+\end{center}    
+\end{td}
+\noindent 证明：
+\par 已知：
+$$A \thicksim B_{1}\subset  B \quad B\thicksim A_{1} \subset  A $$
+\par 则：
+\begin{center}
+$\exists$双射$\varphi _{1} : A \to B_{1}$ ，$\exists$双射$\varphi _{2} : B \to A_{1}$ 
+\end{center}
+\par 令：
+$$A_{2} = \varphi _{2}(B_{1})$$ 
+\par 由于：
+$$B_{1}\subset B$$
+\par 则：
+$$A_{2}\subset \varphi _{2}(B) = A_{1}$$
+\par 又因：
+$$\varphi _{2}: B_{1}  \stackrel{1-1}{\to} A_{2}$$
+\par 故有：
+$$A \stackrel{\varphi _{1}}{\thicksim }B_{1}\stackrel{\varphi _{2}}{\thicksim }A_{2}$$
+\par 令：
+$$B_{2} = \varphi _{1}(A_{1})$$
+\par 则：
+$$B_{2}\subset \varphi _{1}(A) = B_{1},\quad \varphi _{1}: A_{1}  \stackrel{1-1}{\to} B_{2}$$
+\par 故有：
+$$B \stackrel{\varphi _{2}}{\thicksim }A_{1}\stackrel{\varphi _{1}}{\thicksim }B_{2}$$
+\par 令：
+$$A_{3} = \varphi _{2}(B_{2}) \quad B_{3} = \varphi _{1}(A_{2})$$
+$$A_{4} = \varphi _{2}(B_{3}) \quad B_{4} = \varphi _{1}(A_{3})$$
+\par 则：
+$$A\supset A_{1}\supset A_{2}\supset A_{3}\supset \dots$$
+$$B\supset B_{1}\supset B_{2}\supset B_{3}\supset \dots$$
+\par 且：
+$$A \stackrel{\varphi _{1}}{\thicksim }B_{1}\stackrel{\varphi _{2}}{\thicksim }A_{2}\stackrel{\varphi _{1}}{\thicksim }B_{3}\stackrel{\varphi _{2}}{\thicksim }A_{4}\thicksim \dots \stackrel{\varphi _{1}}{\thicksim }B_{2n-1}\stackrel{\varphi _{2}}{\thicksim }A_{2n} \thicksim \dots$$
+$$B\stackrel{\varphi _{2}}{\thicksim }A_{1}\stackrel{\varphi _{1}}{\thicksim }B_{2}\stackrel{\varphi _{2}}{\thicksim }A_{3}\stackrel{\varphi _{1}}{\thicksim }B_{4}\thicksim \dots \stackrel{\varphi _{2}}{\thicksim }A_{2n-1}\stackrel{\varphi _{1}}{\thicksim }B_{2n} \thicksim \dots $$
+\par 令$\varphi =\varphi _{1}\circ \varphi _{2}$，则：
+$$A \stackrel{\varphi}{\thicksim }A_{2}\stackrel{\varphi}{\thicksim }A_{4}\stackrel{\varphi}{\thicksim } \dots \stackrel{\varphi}{\thicksim}A_{2n} \thicksim \dots$$
+$$A_{1} \stackrel{\varphi}{\thicksim }A_{3}\stackrel{\varphi}{\thicksim }A_{5}\stackrel{\varphi}{\thicksim } \dots \stackrel{\varphi}{\thicksim}A_{2n-1} \thicksim \dots$$
+\par 故对$\forall n \in \mathbb{Z}^{+}$，$\varphi $是双射：
+$$A_{2} = \varphi (A),\dots,A_{n+2} = \varphi (A_{n})$$
+\par 故对$\forall n \in \mathbb{Z}^{+}$：
+$$A_{2}\thicksim A,\dots,A_{n+2}\thicksim A_{n}$$
+\par 故对$\forall n \in \mathbb{Z}^{+}$，有：
+\begin{equation}
+   A_{n}\setminus A_{n+1}\thicksim A_{n+2}\setminus A_{n+3} \tag{*} \label{6}
+\end{equation}
+\par 将$A$与$A_{1}$分解为互不相交的子集的并：
+\begin{align*}
+    A & = \left(A\setminus A_{1}\right) \cup A_{1} \\
+    & = \left(A\setminus A_{1}\right) \cup \left(A_{1}\setminus A_{2}\right) \cup A_{2}\\
+    & = \left(A\setminus A_{1}\right) \cup \left(A_{1}\setminus A_{2}\right) \cup \left(A_{2}\setminus A_{3}\right) \cup \dots \cup D\\
+    A_{1} & = \left(A_{1}\setminus A_{2}\right) \cup A_{2} \\
+    & = \left(A_{1}\setminus A_{2}\right) \cup \left(A_{2}\setminus A_{3}\right) \cup A_{3}\\
+    & = \left(A_{1}\setminus A_{2}\right) \cup \left(A_{2}\setminus A_{3}\right) \cup \left(A_{3}\setminus A_{4}\right) \cup \dots \cup D_{1}
+\end{align*}
+\par 其中：
+$$D = A\cap A_{1} \cap A_{2} \cap A_{3} \cap \dots$$
+$$D_{1} = A_{1} \cap A_{2} \cap A_{3} \cap A_{4} \cap \dots$$
+\par 由于：
+$$A\supset A_{1}$$
+\par 故有：
+$$D = D_{1},\quad D\thicksim D_{1}$$
+\par 由 \eqref{6}式,两式分式对等：
+\begin{align*}
+    A & =\left(A\setminus A_{1}\right) \cup \left(A_{1}\setminus A_{2}\right) \cup \left(A_{2}\setminus A_{3}\right) \cup \dots \cup D\\
+    A_{1} & =\left(A_{1}\setminus A_{2}\right) \cup \left(A_{2}\setminus A_{3}\right) \cup \left(A_{3}\setminus A_{4}\right) \cup \dots \cup D_{1}
+\end{align*}
+\par 由引理知：
+$$A \thicksim A_{1}$$
+\par 又因$B\thicksim A_{1}$,由Th \ 1知：
+$$A\thicksim B$$
+
+\begin{la}
+    \pmb{推论：}若$A\supset B\supset C$且$A \thicksim C$，则$A\thicksim B\thicksim C$   
+\end{la}
+\noindent 证明：
+\par 已知$A \thicksim C$故：
+$$\exists \varphi: A \stackrel{1-1}{\to} C$$
+\par 令$C^{*} = \varphi (B) \subset \varphi (A) = C$，则：
+$$\varphi: B \stackrel{1-1}{\to} C^{*}$$
+\par 故：$B\thicksim C^{*}\subset C$
+\par 又因：$C\thicksim C\subset B$
+\par 由Th2 \tiny{\pageref{Th2} } \normalsize 知，$B \thicksim C$

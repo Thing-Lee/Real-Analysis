@@ -1,0 +1,327 @@
+\pmb{本节重点：集合语言进行数学运算和证明}
+
+\begin{eg} 
+\pmb{例2：}$\left(a,b\right) = \bigcup \limits_{n=1}^{\infty}\left[ a + \dfrac{1}{n},b - \dfrac{1}{n}\right]$
+\par $\Rightarrow$\textcolor{red}{闭区间的无穷并不一定是闭的}
+\end{eg}
+\noindent 证明：
+\par \ding{172} $\left(a,b\right) \supset \bigcup \limits_{n=1}^{\infty}\left[ a + \dfrac{1}{n},b - \dfrac{1}{n}\right]$显然
+\par \ding{173} 对$\forall x \in \left(a,b\right) $
+\par \quad 有$ x > a = \lim \limits_{n \to \infty} \left( a + \dfrac{1}{n}\right)$
+\par \quad 故$ \exists N_{1} \in \mathbb{N}^{+}$，$s.t.$对$\forall n > N_{1}$，有$x > a + \dfrac{1}{n}$
+\par \quad 有$ x < b = \lim \limits_{n \to \infty} \left( b - \dfrac{1}{n}\right)$
+\par \quad 故$ \exists N_{2} \in \mathbb{N}^{+}$，$s.t.$对$\forall n < N_{2}$，有$x < b - \dfrac{1}{n}$
+\par \quad 令$N = \max \left\{N_{1},N_{2}\right\} $
+\par \quad 则对$\forall n > N$，有$a + \dfrac{1}{n} < x < b - \dfrac{1}{n}$
+\par \quad 即$x \in \left[ a + \dfrac{1}{n},b - \dfrac{1}{n}\right] \subset \bigcup \limits_{n=1}^{\infty}\left[ a + \dfrac{1}{n},b - \dfrac{1}{n}\right]$
+\par \quad 故$ \left(a,b\right) \subset \bigcup \limits_{n=1}^{\infty}\left[ a + \dfrac{1}{n},b - \dfrac{1}{n}\right]$
+\par 综上：$\left(a,b\right) = \bigcup \limits_{n=1}^{\infty}\left[ a + \dfrac{1}{n},b - \dfrac{1}{n}\right]$
+
+\begin{eg}
+    \pmb{例3：}若$Q_{n} = \left\{\dfrac{m}{n} : m \in \mathbb{Z}\right\} $，$n = 1,2,\dots$，则$\mathbb{Q} = \bigcup \limits_{n=1}^{\infty} Q_{n}$
+\end{eg}
+\noindent 证明：
+\par \ding{172} $\mathbb{Q} \supset \bigcup \limits_{n=1}^{\infty} Q_{n}$显然
+\par \ding{172} 对$\forall x \in \mathbb{Q}$
+\par \quad 有$x = \dfrac{p}{q} \in \mathbb{Q}_{q} \subset \bigcup \limits_{n=1}^{\infty} Q_{n}$
+\par \quad 故$ \mathbb{Q} \subset \bigcup \limits_{n=1}^{\infty} Q_{n}$
+\par 综上：$\mathbb{Q} = \bigcup \limits_{n=1}^{\infty} Q_{n}$
+
+\begin{eg}
+    \pmb{例5：}若$f(x)$是定义在$E$上的函数，则$\left\{x : f(x) > 0\right\} = \bigcup \limits_{n=1}^{\infty}\left\{x : f(x) > \dfrac{1}{n}\right\} $
+\end{eg}
+\noindent 证明1：
+\par 设$x_{0} \in \left\{x : f(x) > 0\right\}$
+\par $\Leftrightarrow$则$f(x_{0}) > 0$，$\dfrac{1}{f(x_{0})} > 0$
+\par $\Leftrightarrow$ \ $\exists n > \dfrac{1}{f(x_{0})}$，$f(x_{0}) > \dfrac{1}{n}$
+\par $\Leftrightarrow$ \ $x_{0} \in \bigcup \limits_{n=1}^{\infty}\left\{x : f(x) > \dfrac{1}{n}\right\} $
+\\
+证明2：
+\[\underbrace{\left\{x : f(x) > 0\right\} }_\text{$A$}= \bigcup \limits_{n=1}^{\infty}\underbrace{\left\{x : f(x) > \dfrac{1}{n}\right\}}_\text{$A_{n}$} = \bigcup \limits_{n=1}^{\infty}\underbrace{\left\{x : f(x) \geqslant \dfrac{1}{n}\right\}}_\text{$B_{n}$} \]
+\par \ding{172} $\bigcup \limits_{n=1}^{\infty} A_{n} \subset \bigcup \limits_{n=1}^{\infty} B_{n} \subset A$显然
+\par \ding{173} 下证：$A \subset \bigcup \limits_{n=1}^{\infty} A_{n}$
+\par \quad \ 对$\forall x \in A$
+\par \quad \ 有$ f(x) > 0 = \lim \limits_{n \to \infty} \dfrac{1}{n} $
+\par \quad \ 故$ \exists N > 0$，对$\forall n > N$，有$f(x) > \dfrac{1}{n}$
+\par \quad \ 故对$\forall n > N$，有$x \in A_{n}$
+\par \quad \ 故$ x \in \bigcup \limits_{n=1}^{\infty} A_{n}$
+\par \quad \ 故$ A \subset \bigcup \limits_{n=1}^{\infty} A_{n}$
+\par 综上：$A = \bigcup \limits_{n=1}^{\infty} A_{n} = \bigcup \limits_{n=1}^{\infty} B_{n} $
+
+\begin{eg}
+    \pmb{例8：}若$\left\{f_{n}(x)\right\} $是定义在$E$上的一列函数，则对$\forall c \in \mathbb{R}$
+\par (1)$\left\{x : \sup f_{n}(x) \leqslant c\right\} = \bigcap \limits_{n=1}^{\infty} \left\{x : f_{n}(x) \leqslant c\right\} $ \quad $\xrightarrow{regard \ as} \ A = \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par (2)$\left\{x : \sup f_{n}(x) > c\right\} = \bigcup \limits_{n=1}^{\infty} \left\{x : f_{n}(x) > c\right\} $ \quad $\xrightarrow{regard \ as} \ B = \bigcup \limits_{n=1}^{\infty}B_{n}$
+\end{eg}
+\noindent 证明：
+\par (1) 
+\par \ding{172} \ 对$\forall x \in A$
+\par \quad \ 有$\sup f_{n}(x) \leqslant c$
+\par \quad \ 故对$\forall n \in \mathbb{R}$，有$f_{n}(x) \leqslant \sup f_{n}(x) \leqslant c$
+\par \quad \ 故对$\forall n \in \mathbb{R}$，有$x \in A_{n}$
+\par \quad \ 故$ x \in \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par \quad \ 故$ A \subset \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par \ding{173} \ 对$\forall x \in \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par \quad \ 故对$\forall n \in \mathbb{R}$，有$x \in A_{n}$
+\par \quad \ 故对$\forall n \in \mathbb{R}$，有$f_{n}(x) \leqslant c$
+\par \quad \ 故$ \sup f_{n}(x) \leqslant c$
+\par \quad \ 故$ x \in A$
+\par \quad \ 故$ \bigcap \limits_{n=1}^{\infty}A_{n} \subset A$
+\par 综上：$A = \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par (2) 
+\par \ding{172} \ 对$\forall x \in B$
+\par \quad \ 有$\sup f_{n}(x) > c$
+\par \quad \ 故$\exists n \in \mathbb{N}^{+}$，$s.t. \ f_{n}(x) > c$
+\par \quad \ 若不然
+\par \quad \ 则$\exists n \in \mathbb{N}^{+}$，$s.t. \ \sup f_{n}(x) \leqslant c$，$s.t. \ f_{n}(x) \leqslant c$ 
+\par \quad \ 与题设矛盾，所以必然存在$n$
+\par \quad \ 故$\exists n \in \mathbb{N}^{+}$，$s.t. \ x \in B_{n}$
+\par \quad \ 故$x \in \bigcup \limits_{n=1}^{\infty}B_{n}$
+\par \quad \ 故$B \subset \bigcup \limits_{n=1}^{\infty}B_{n}$
+\par \ding{173} \ 对$\forall x \in \bigcup  \limits_{n=1}^{\infty}B_{n}$
+\par \quad \ 故$\exists n \in \mathbb{N}^{+}$，$s.t. \ x \in B_{n}$
+\par \quad \ 故$\exists n \in \mathbb{N}^{+}$，$s.t. \ f_{n}(x) > c$
+\par \quad \ 故$sup f_{n}(x) \geqslant  f_{n}(x) > c$
+\par \quad \ 故$x \in B$
+\par \quad \ 故$\bigcup \limits_{n=1}^{\infty}B_{n} \subset B$
+\par 综上：$B = \bigcup \limits_{n=1}^{\infty}B_{n}$
+
+\newpage
+\begin{td}
+\pmb{$De \ Morgan$公式}
+\par (1) $\left( \bigcup \limits_{\alpha \in \varLambda}A_{\alpha}\right)^{c} = \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}^{c}$
+\par (2) $\left( \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}\right)^{c} = \bigcup \limits_{\alpha \in \varLambda}A_{\alpha}^{c}$
+\end{td}
+\noindent 证明(2)：
+\par \ding{172} 对$\forall x \in \left( \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}\right)^{c} $
+\par \quad 则$x \notin \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}$
+\par \quad 故$\exists \alpha \in \varLambda $，$s.t. \ x \notin A_{\alpha}$
+\par \quad 故$\exists \alpha \in \varLambda $，$s.t. \ x \in A_{\alpha}^{c}$
+\par \quad 故$x \in \bigcup \limits_{\alpha \in \varLambda}A_{\alpha}^{c}$
+\par \quad 故$\left( \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}\right)^{c} \subset  \bigcup \limits_{\alpha \in \varLambda}A_{\alpha}^{c}$
+\par \ding{173} 对$\forall x \in \bigcup \limits_{\alpha \in \varLambda}A_{\alpha}^{c}$
+\par \quad 则$\exists \alpha \in \varLambda $，$s.t. \ x \in A_{\alpha}^{c}$
+\par \quad 故$\exists \alpha \in \varLambda $，$s.t. \ x \notin A_{\alpha}$
+\par \quad 故$x \notin \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}$
+\par \quad 故$x \in \left( \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}\right)^{c}$
+\par \quad 故$\bigcup \limits_{\alpha \in \varLambda}A_{\alpha}^{c} \subset \left( \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}\right)^{c} $
+\par 综上：$\left( \bigcap \limits_{\alpha \in \varLambda}A_{\alpha}\right)^{c} = \bigcup \limits_{\alpha \in \varLambda}A_{\alpha}^{c}$
+\\ \hspace*{\fill}\\
+\pmb{$De \ Morgan$公式的应用}
+
+\begin{eg}
+   \pmb{例11：}若$\left\{f_{n}(x)\right\}$是定义在$E$上的函数列，则：
+\par (1)$\left\{ x : \left\{f_{n}(x)\right\} is \ bounded \right\} = \bigcup \limits_{M \in \mathbb{R}}\bigcap \limits_{n=1}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert \leqslant M\right\} $
+\par (2) $\left\{ x : \left\{f_{n}(x)\right\} isn't \ bounded \right\} = \bigcap \limits_{M \in \mathbb{R}}\bigcup \limits_{n=1}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert > M\right\} $  
+\end{eg}
+\noindent 证明：
+\par (1) $\xrightarrow{regard \ as} A = \bigcup \limits_{M \in \mathbb{R}}\bigcap \limits_{n=1}^{\infty}A_{n,M}$
+\par \quad \ $x \in A$
+\par \quad \ $\Leftrightarrow \left\{f_{n}(x)\right\}$有界
+\par \quad \ $\Leftrightarrow \exists M > 0$，$s.t.$对$\forall n \in \mathbb{N}^{+}$，有$\left\lvert f_{n}(x)\right\rvert \leqslant M$
+\par \quad \ $\Leftrightarrow \exists M > 0$，$s.t.$对$\forall n \in \mathbb{N}^{+}$，有$x \in A_{n,M}$
+\par \quad \ $\Leftrightarrow \exists M > 0$，$s.t. \ x \in \bigcap \limits_{n=1}^{\infty}A_{n,M}$
+\par \quad \ $\Leftrightarrow x \in \bigcup \limits_{M \in \mathbb{R}} \bigcap \limits_{n=1}^{\infty}A_{n,M}$
+\par \quad 故 $A = \bigcup \limits_{M \in \mathbb{R}}\bigcap \limits_{n=1}^{\infty}A_{n,M}$
+\par (2) $\xrightarrow{regard \ as} A = \bigcap \limits_{M \in \mathbb{R}}\bigcup \limits_{n=1}^{\infty}A_{n,M}$
+\par \quad \ $De \ Morgan$公式：
+\par \quad \ $\left\{ x : \left\{f_{n}(x)\right\} isn't \ bounded \right\} = \left\{ x : \left\{f_{n}(x)\right\} is \ bounded \right\}^{c}$
+\par \quad \ $= \left(\bigcup \limits_{M \in \mathbb{R}}\bigcap \limits_{n=1}^{\infty}A_{n,M}\right)^{c} = \bigcap \limits_{M \in \mathbb{R}}\left(\bigcap \limits_{n=1}^{\infty}A_{n,M}\right)^{c} $
+\par \quad \ $=\bigcap \limits_{M \in \mathbb{R}}\bigcup \limits_{n=1}^{\infty}A_{n,M}^{c} = \bigcap \limits_{M \in \mathbb{R}}\bigcup \limits_{n=1}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert > M\right\}$
+
+\begin{eg}
+\pmb{例12：}若$\left\{f_{n}(x)\right\}$是定义在$E$上的函数列，有：
+\par (1) $\left\{x : \lim \limits_{n \to \infty} f_{n}(x) = 0 \right\} = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcup \limits_{N = 1}^{\infty}\bigcap \limits_{n=N}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert < \varepsilon \right\} $
+\par (2) $\left\{x : \lim \limits_{n \to \infty} f_{n}(x) \neq  0 \ or \ \nexists \right\} = \bigcup \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcap \limits_{N = 1}^{\infty}\bigcup \limits_{n=N}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert \geqslant \varepsilon \right\} $
+\end{eg}
+\noindent 证明：
+\par (1)$\xrightarrow{regard \ as} \ A = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcup \limits_{N = 1}^{\infty}\bigcap \limits_{n=N}^{\infty}A_{n,\varepsilon }$
+\par \quad \ $x \in A$
+\par \quad \ $\Leftrightarrow \lim \limits_{n \to \infty} f_{n}(x) = 0$
+\par \quad \ $\Leftrightarrow$对$\forall \varepsilon > 0$，$\exists N \in \mathbb{N}^{+}$，对$\forall n\geqslant N$，有$\left\lvert f_{n}(x)\right\rvert < \varepsilon$
+\par \quad \ $\Leftrightarrow$对$\forall \varepsilon > 0$，$x \in \bigcup \limits_{N = 1}^{\infty}\bigcap \limits_{n=N}^{\infty}A_{n,\varepsilon }$
+\par \quad \ $\Leftrightarrow x \in  \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcup \limits_{N = 1}^{\infty}\bigcap \limits_{n=N}^{\infty}A_{n,\varepsilon }$
+\par \quad 故$A = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcup \limits_{N = 1}^{\infty}\bigcap \limits_{n=N}^{\infty}A_{n,\varepsilon }$
+\par (2) $De \ Morgan$公式：
+\par \quad \ $\left\{x : \lim \limits_{n \to \infty} f_{n}(x) \neq  0 \ or \ \nexists \right\} = A^{c}$
+\par \quad \ $= \left(\bigcap \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcup \limits_{N = 1}^{\infty}\bigcap \limits_{n=N}^{\infty}A_{n,\varepsilon}\right)^{c} $
+\par \quad \ $= \bigcup \limits_{\varepsilon \in \mathbb{R}^{+}}\left(\bigcup \limits_{N = 1}^{\infty}\bigcap \limits_{n=N}^{\infty}A_{n,\varepsilon}\right)^{c} $
+\par \quad \ $= \bigcup \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcap \limits_{N = 1}^{\infty}\left(\bigcap \limits_{n=N}^{\infty}A_{n,\varepsilon}\right)^{c} $
+\par \quad \ $= \bigcup \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcap \limits_{N = 1}^{\infty}\bigcup \limits_{n=N}^{\infty}A_{n,\varepsilon}^{c} $
+\par \quad \ $= \bigcup \limits_{\varepsilon \in \mathbb{R}^{+}}\bigcap \limits_{N = 1}^{\infty}\bigcup \limits_{n=N}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert \geqslant \varepsilon \right\}$
+
+\begin{td}
+\pmb{集列上、下极限}
+$\overline{\lim \limits_{n \to \infty}}A_{n}$
+$\lim \limits_{\overline{n \to \infty}}A_{n}$
+\[\overline{\lim \limits_{n \to \infty}}A_{n} = \left\{x : \forall N > 0,\exists n > N,s.t. \ x \in A_{n}\right\} \]    
+\end{td}
+\noindent 证明：
+$\xrightarrow{regard \ as} \ \overline{\lim \limits_{n \to \infty}}A_{n} = A$
+\par \ding{172}对$\forall x \in \overline{\lim \limits_{n \to \infty}}A_{n}$，下证：$x \in A$
+\par \ 反证法：假设$x \notin A$
+\par \quad \quad \quad \quad \ 则$\exists N > 0$，对$\forall n > N$，有$x \notin A_{n}$
+\par \quad \quad \quad \quad \ 故$x$至多属于有限个$A_{n}$
+\par \quad \quad \quad \quad \ 所以$x \notin \overline{\lim \limits_{n \to \infty}}A_{n} $ \ 矛盾
+\par \quad \quad \quad \quad \ 故假设不成立
+\par \quad \quad \quad \quad \ 故$x \in A$，$\overline{\lim \limits_{n \to \infty}}A_{n} \subset A$
+\par \ding{173}对$\forall x \in A$，下证：$x \in \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par \ 反证法：假设$x \notin \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par \quad \quad \quad \quad \ 则$x$至多属于有限个$A_{n}$，记最大下标为$N$
+\par \quad \quad \quad \quad \ 则$\forall n > N$，$x \notin A_{n}$，矛盾
+\par \quad \quad \quad \quad \ 故假设不成立
+\par \quad \quad \quad \quad \ 故$x \in \overline{\lim \limits_{n \to \infty}}A_{n}$，$A \subset \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par 综上：$\overline{\lim \limits_{n \to \infty}}A_{n} = A$
+\\ \hspace*{\fill}\\
+\pmb{求集列上、下极限}
+
+\begin{eg}
+\pmb{例13：}设$A_{n}$是如下一列点集：
+\[ \quad \quad \quad \ A_{2m + 1} = \left[0,2 -\dfrac{1}{2m+1}\right],m=0,1,2,\dots\]
+\[A_{2m} = \left[0,1 + \dfrac{1}{2m}\right],m=1,2,\dots\]
+求$\lim \limits_{\overline{n \to \infty}}A_{n}$和$\overline{\lim \limits_{n \to \infty}}A_{n}$    
+\end{eg}
+\noindent 解：
+\par 因为对$\forall n$，有$\left[0,1\right] \subset A_{n} \subset \left[0,2\right) $
+\par 故有$\left[0,1\right] \subset \lim \limits_{\overline{n \to \infty}}A_{n} \subset \overline{\lim \limits_{n \to \infty}}A_{n}\subset \left[0,2\right) $
+\par \ding{172} 下证：$\lim \limits_{\overline{n \to \infty}}A_{n} \subset \left[0,1\right]$
+\par \quad \ 对$\forall x \in \lim \limits_{\overline{n \to \infty}}A_{n}$，$\exists N > 0$，对$\forall n > N$，$s.t. \ x \in A_{n}$
+\par \quad \ 故对$\forall n > N$，$s.t. \ x \in A_{2n}$
+\par \quad \ 故对$\forall n > N$，$s.t. \ 0 \leqslant  x \leqslant 1 + \dfrac{1}{2n}$
+\par \quad \ 令$n \to \infty$，得$0 \leqslant x \leqslant 1$
+\par \quad \ 故$x \in \left[0,1\right] $
+\par \quad \ 故$\lim \limits_{\overline{n \to \infty}}A_{n} \subset \left[0,1\right]$
+\par \ding{173} 下证：$\left[0,2\right) \subset \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par \quad \ 对$\forall x \in \left[0,2\right) $
+\par \quad \ 有$x < 2 = \lim \limits_{n \to \infty} \left( 2 -\dfrac{1}{2n+1} \right)$
+\par \quad \ 故$\exists N >0$，对$\forall n > N$，有$0 \leqslant  x < 2 -\dfrac{1}{2n+1} $
+\par \quad \ 对$\forall n > N$，有$x \in A_{2n + 1}$
+\par \quad \ 故$x \in \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par \quad \ 故$\left[0,2\right) \subset \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par 综上：$\lim \limits_{\overline{n \to \infty}}A_{n} = \left[0,1\right]$ \quad $\overline{\lim \limits_{n \to \infty}}A_{n} = \left[0,2\right)$
+
+\begin{eg}
+\pmb{例14：}设$\lim \limits_{n \to \infty} a_{n} = a$，求证：
+\[\left\{a\right\} = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}} \lim \limits_{\overline{n \to \infty}}\left\{x : \left\lvert x - a_{n} \right\rvert < \varepsilon \right\} \]
+\end{eg}
+\noindent 证明：
+$\xrightarrow{regard \ as} \ \left\{a\right\} = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}} \lim \limits_{\overline{n \to \infty}}A_{n,\varepsilon } $
+\par \ $\lim \limits_{n \to \infty} a_{n} = a$
+\par \ $\Leftrightarrow$对$\forall \varepsilon > 0$，$\exists N > 0$，对$\forall n > N$，有$\left\lvert x - a_{n} \right\rvert  < \varepsilon$
+\par \ $\Leftrightarrow$对$\forall \varepsilon > 0$，$\exists N > 0$，对$\forall n > N$，有$a \in A_{n,\varepsilon }$
+\par \ $\Leftrightarrow$对$\forall \varepsilon > 0$，有$a \in \lim \limits_{\overline{n \to \infty}}A_{n,\varepsilon }$
+\par \ $\Leftrightarrow$$a \in \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}} \lim \limits_{\overline{n \to \infty}}A_{n,\varepsilon }$
+\par 由极限的唯一性得：$\left\{a\right\} = \bigcap \limits_{\varepsilon \in \mathbb{R}^{+}} \lim \limits_{\overline{n \to \infty}}\left\{x : \left\lvert x - a_{n} \right\rvert < \varepsilon \right\} $
+\begin{td}
+\pmb{Theorem \ 3 ：}
+\[\overline{\lim \limits_{n \to \infty}}A_{n} = \bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m}\]
+\[\lim \limits_{\overline{n \to \infty}}A_{n} = \bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m}\]
+\end{td}
+\noindent (1)
+\par \ding{172} 先证：$\overline{\lim \limits_{n \to \infty}}A_{n} \subset  \bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m}$
+\par \quad 对$\forall x \in \overline{\lim \limits_{n \to \infty}}A_{n} = \left\{x : \forall N > 0,\exists m > N,s.t. \ x \in A_{m}\right\} \dots \dots \dots \dots(\romannumeral1)$
+\par \quad 对$\forall n \in \mathbb{N}^{+}$，由$(\romannumeral1)$式知，$\exists m > n$，$s.t. \ x \in A_{m}$
+\par \quad 对$\forall n \in \mathbb{N}^{+}$，有$x \in \bigcup \limits_{m=n}^{\infty}A_{m}$
+\par \quad 故$x \in \bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m}$
+\par \quad 故$\overline{\lim \limits_{n \to \infty}}A_{n} \subset  \bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m}$
+\par \ding{173} 下证：$ \bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m} \subset \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par \quad 对$\forall x \in \bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m}$
+\par \quad 则对$\forall n \in \mathbb{N}^{+}$，$\exists m > n$，$s.t. \ x \in A_{m} \dots \dots \dots \dots(\romannumeral2)$
+\par \quad 对$\forall N > 0$，令$n_{0} = \left[N\right] + 1 \in \mathbb{N}^{+} $
+\par \quad 由$(\romannumeral2)$式知，$\exists m \geqslant n_{0} > N$，$s.t. \ x \in A_{m}$
+\par \quad 故$x \in \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par \quad 故$\bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m} \subset \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par 综上：$\overline{\lim \limits_{n \to \infty}}A_{n} = \bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m}$
+\\(2)
+\par \ding{172} 先证：$\lim \limits_{\overline{n \to \infty}}A_{n} \subset  \bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m}$
+\par \quad 对$\forall x \in \lim \limits_{\overline{n \to \infty}}A_{n} = \left\{x : \exists N > 0,\forall m > N,s.t. \ x \in A_{m}\right\} \dots \dots \dots \dots(\romannumeral3)$
+\par \quad 令$n_{0} = \left[N\right] + 1 \in \mathbb{N}^{+}$
+\par \quad 由$(\romannumeral3)$式知，对$\forall m \geqslant n_{0} > N$，有$x \in A_{m}$
+\par \quad 则$x \in \bigcap \limits_{m=n}^{\infty}A_{m}$
+\par \quad 故$x \in \bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m}$
+\par \quad 故$\lim \limits_{\overline{n \to \infty}}A_{n} \subset  \bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m}$
+\par \ding{173} 下证：$ \bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m} \subset \lim \limits_{\overline{n \to \infty}}A_{n}$
+\par \quad 对$\forall x \in \bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m} $
+\par \quad 可知$\exists n \in \mathbb{N}^{+}$，对$\forall m \geqslant n$，有$x \in A_{m} \dots \dots \dots \dots(\romannumeral4)$
+\par \quad 令$N = n > 0$
+\par \quad 由$(\romannumeral4)$式知，对$\forall m > N$，有$x \in A_{m}$
+\par \quad 故$x \in \lim \limits_{\overline{n \to \infty}}A_{n}$
+\par \quad 故$ \bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m} \subset \lim \limits_{\overline{n \to \infty}}A_{n}$
+\par 综上：$\lim \limits_{\overline{n \to \infty}}A_{n} = \bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m}$
+
+\begin{eg}
+\pmb{例:}
+\par (1)$\left\{x : \lim \limits_{n \to \infty}f_{n}(x) = 0\right\} = \bigcap \limits_{\varepsilon  \in \mathbb{R}^{+}} \lim \limits_{\overline{n \to \infty}}\left\{x : \left\lvert f_{n}(x)\right\rvert < \varepsilon \right\}$
+\par (2)$\left\{x : \lim \limits_{n \to \infty}f_{n}(x) \neq 0 \ or \ \nexists \right\} = \bigcup  \limits_{\varepsilon  \in \mathbb{R}^{+}} \overline{\lim \limits_{n \to \infty}}\left\{x : \left\lvert f_{n}(x)\right\rvert \geqslant \varepsilon \right\}$    
+\end{eg}
+\noindent 证明：
+\\(1)
+\par $\left\{x : \lim \limits_{n \to \infty}f_{n}(x) = 0\right\} \xlongequal{eg.12} \bigcap \limits_{\varepsilon  \in \mathbb{R}^{+}}\bigcup \limits_{N=1}^{\infty}\bigcap \limits_{n=N}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert < \varepsilon \right\}$
+\par $\xlongequal{Th.3} \bigcap \limits_{\varepsilon  \in \mathbb{R}^{+}} \lim \limits_{\overline{n \to \infty}}\left\{x : \left\lvert f_{n}(x)\right\rvert < \varepsilon \right\}$
+\\(2)
+\par $\left\{x : \lim \limits_{n \to \infty}f_{n}(x) \neq 0 \ or \ \nexists \right\} \xlongequal{eg.12} \bigcup \limits_{\varepsilon  \in \mathbb{R}^{+}}\bigcap \limits_{N=1}^{\infty}\bigcup \limits_{n=N}^{\infty}\left\{x : \left\lvert f_{n}(x)\right\rvert \geqslant  \varepsilon \right\}$
+\par $\xlongequal{Th.3} \bigcup  \limits_{\varepsilon  \in \mathbb{R}^{+}} \overline{\lim \limits_{n \to \infty}}\left\{x : \left\lvert f_{n}(x)\right\rvert \geqslant \varepsilon \right\}$
+\begin{eg}
+\pmb{例:} 若$A_{n} = \left[0, 1 + \dfrac{1}{n}\right] ,n = 1,2,3,\dots$，则$\lim \limits_{n \to \infty} A_{n} = \left[0,1\right] $    
+\end{eg}
+\noindent 证明：
+\par 对$\forall n \in \mathbb{Z}^{+}$，有$\left[0,1\right] \subset A_{n}$
+\par 则有$\left[0,1\right] \subset \lim \limits_{\overline{n \to \infty}}A_{n} \subset \overline{\lim \limits_{n \to \infty}}A_{n}$
+\par 下证：$\overline{\lim \limits_{n \to \infty}}A_{n} \subset \left[0,1\right]$
+\par 对$\forall x \in \overline{\lim \limits_{n \to \infty}}A_{n} $，$x \geqslant 0$显然
+\par 下证：$x \leqslant 1$
+\par 反证法：假设$x >1 = \lim \limits_{n \to \infty} \left(1 + \dfrac{1}{n}\right)$
+\par \quad \quad \quad \quad 则$\exists N > 0$，对$\forall n > N$，有$x > 1 + \dfrac{1}{n}$
+\par \quad \quad \quad \quad 故对$\forall n > N$，有$x \notin A_{n}$
+\par \quad \quad \quad \quad 故$x$至多属于有限个$A_{n}$
+\par \quad \quad \quad \quad 则$x \notin \overline{\lim \limits_{n \to \infty}}A_{n}$，矛盾
+\par \quad \quad \quad \quad 故假设不成立
+\par \quad \quad \quad \quad 故$x \leqslant 1$，即$x \in \left[0,1\right] $
+\par \quad \quad \quad \quad 故$\overline{\lim \limits_{n \to \infty}}A_{n} \subset \left[0,1\right]$
+\par 综上：$\lim \limits_{\overline{n \to \infty}}A_{n} = \overline{\lim \limits_{n \to \infty}}A_{n} = \left[0,1\right]$
+\par \quad \quad \quad 即$\left\{A_{n}\right\}$收敛且$\lim \limits_{n \to \infty} A_{n} = \left[0,1\right] $
+\newpage
+\begin{wa}
+\pmb{注：单调集列是收敛的}
+\par (1)若$\left\{A_{n}\right\}$单调递增，则$\lim \limits_{n \to \infty} A_{n} = \bigcup \limits_{n=1}^{\infty}A_{n}$
+\par (1)若$\left\{A_{n}\right\}$单调递减，则$\lim \limits_{n \to \infty} A_{n} = \bigcap \limits_{n=1}^{\infty}A_{n}$
+\end{wa}
+\noindent 证明：
+\par (1)
+\par $\left\{A_{n}\right\}$递增
+\par $\lim \limits_{\overline{n \to \infty}}A_{n} \xlongequal{Th.3}\bigcup \limits_{n=1}^{\infty}\bigcap \limits_{m=n}^{\infty}A_{m} = \bigcup \limits_{n=1}^{\infty}A_{n}$
+\par $\overline{\lim \limits_{n \to \infty}}A_{n} \xlongequal{Th.3}\bigcap \limits_{n=1}^{\infty}\underbrace{\bigcup \limits_{m=n}^{\infty}A_{m}}_\text{$B_{n}$} \subset B_{1} = \bigcup \limits_{m=1}^{\infty}A_{m} = \bigcup \limits_{n=1}^{\infty}A_{n}$
+\par 故$\bigcup \limits_{n=1}^{\infty}A_{n} = \lim \limits_{\overline{n \to \infty}}A_{n} \subset \overline{\lim \limits_{n \to \infty}}A_{n} \subset \bigcup \limits_{n=1}^{\infty}A_{n}$
+\par 即$\lim \limits_{\overline{n \to \infty}}A_{n} = \overline{\lim \limits_{n \to \infty}}A_{n} = \bigcup \limits_{n=1}^{\infty}A_{n}$
+\par 故$\left\{A_{n}\right\}$收敛且$\lim \limits_{n \to \infty} A_{n} = \bigcup \limits_{n=1}^{\infty}A_{n}$
+\par (2)
+\par $\left\{A_{n}\right\}$递减
+\par $\overline{\lim \limits_{n \to \infty}}A_{n} \xlongequal{Th.3}\bigcap \limits_{n=1}^{\infty}\bigcup \limits_{m=n}^{\infty}A_{m} = \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par $\lim \limits_{\overline{n \to \infty}}A_{n} \xlongequal{Th.3}\bigcup \limits_{n=1}^{\infty}\underbrace{\bigcap \limits_{m=n}^{\infty}A_{m}}_\text{$B_{n}$} \supset  B_{1} = \bigcap \limits_{m=1}^{\infty}A_{m} = \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par 故$\bigcap \limits_{n=1}^{\infty}A_{n} \subset \lim \limits_{\overline{n \to \infty}}A_{n} \subset \overline{\lim \limits_{n \to \infty}}A_{n} = \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par 即$\lim \limits_{\overline{n \to \infty}}A_{n} = \overline{\lim \limits_{n \to \infty}}A_{n} = \bigcap \limits_{n=1}^{\infty}A_{n}$
+\par 故$\left\{A_{n}\right\}$收敛且$\lim \limits_{n \to \infty} A_{n} = \bigcap \limits_{n=1}^{\infty}A_{n}$
+\begin{eg}
+\pmb{例15：}若$f_{n}(x)$是定义在$E$上的有限函数
+\par (1)若$F_{n} = \left\{x : \left\lvert f(x)\right\rvert \geqslant \dfrac{1}{n}\right\} ,n=1,2,\dots$，则$\left\{F_{n}\right\}$是增加集列，且
+\[\lim \limits_{n \to \infty} F_{n} = \left\{x : f(x)\neq 0\right\}\]    
+\end{eg}
+\noindent 证明：对$\forall n \in \mathbb{Z}^{+}$，有$F_{n}\subset F_{n+1}$
+\par \quad 故$\left\{F_{n}\right\}$增加
+\par \quad $\lim \limits_{n \to \infty} F_{n} = \bigcup \limits_{n=1}^{\infty}F_{n} = \bigcup \limits_{n=1}^{\infty}\left\{x : \left\lvert f(x)\right\rvert \geqslant \dfrac{1}{n}\right\}$
+\par \quad $\xlongequal{eg.5}\left\{x : f(x) > 0\right\}$
+\par \quad $= \left\{x : f(x)\neq 0\right\}$
+\begin{eg}
+\par (2)若$E_{n} = \left\{x : f(x) > n\right\} ,n=1,2,\dots$，则$\left\{E_{n}\right\}$是减少集列，且
+\[\lim \limits_{n \to \infty} E_{n} = \varnothing \]    
+\end{eg}
+\noindent 证明：对$\forall n \in \mathbb{Z}^{+}$，有$E_{n+1}\subset E_{n}$
+\par \quad 故$\left\{E_{n}\right\}$减少
+\par \quad 故$\lim \limits_{n \to \infty} E_{n} = \bigcap \limits_{n=1}^{\infty}E_{n} $
+\par \quad 下证：$\bigcap \limits_{n=1}^{\infty}E_{n} = \varnothing $
+\par \quad 反证法：假设$\exists x \in \bigcap \limits_{n=1}^{\infty}E_{n}$
+\par \quad \quad \quad \quad \quad 则对$\forall n \in \mathbb{Z}^{+}$，有$x \in E_{n}$
+\par \quad \quad \quad \quad \quad 则对$\forall n \in \mathbb{Z}^{+}$，有$ f(x) > n$
+\par \quad \quad \quad \quad \quad 令$n \to \infty$，得$f(x) = + \infty$，矛盾
+\par \quad \quad \quad \quad \quad 故假设不成立
+\par \quad \quad \quad \quad \quad 所以$\lim \limits_{n \to \infty} E_{n} = \varnothing $

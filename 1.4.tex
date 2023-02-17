@@ -1,0 +1,245 @@
+\pmb{本节重点：掌握各个定理的区别和联系，本节需要反复学习}
+\begin{td}
+\pmb{定义：}与全体正整数所成的集合$\mathbb{Z}^{+}$对等的集合称为可数集合或可列集合，
+\par \quad  基数记为$a$或$\aleph _{0}$    
+\end{td}
+
+\begin{wa}
+\pmb{注1：}$\mathbb{Z}^{+}$可按大小排序成无穷序列：$1,2,3,\dots,n,\dots$\par
+\pmb{\textcolor{red}{$\bigstar$}}$A$是可数集合$\Leftrightarrow $ \ $A$可排成无穷序列：$a_{1},a_{2},a_{3},\dots,a_{n},\dots$    
+\end{wa}
+\noindent 证明：
+\par $''\Rightarrow''$由于$A$是可数集合,故$A\thicksim \mathbb{Z}^{+}$
+\par \quad \quad \ 故$\exists \varphi : \mathbb{Z}^{+} \stackrel{1-1}{\to} A ,n \mapsto \varphi (n)$
+\par \quad \quad \ 对$\forall n \in \mathbb{Z}^{+}$，记$a_{n} = \varphi (n)$
+\par \quad \quad \ 则$A$可排成无穷序列$A = \varphi (\mathbb{Z}^{+}) : a_{1},a_{2},a_{3},\dots,a_{n},\dots$
+\par $''\Leftarrow ''$已知$A$可排成无穷序列$A = \varphi (\mathbb{Z}^{+}) : a_{1},a_{2},a_{3},\dots,a_{n},\dots$
+\par \quad \quad \ 令$\varphi : \mathbb{Z}^{+} \to A ,n \mapsto a_{n}$
+\par \quad \quad \ 易知$\varphi $是双射
+\par \quad \quad \ 故$\mathbb{Z}^{+}\thicksim A$，$A$是可数集合
+
+\begin{td}
+\pmb{Theorem \ 1：}任何无限集合都至少包含一个可数子集    
+\end{td}
+\noindent 证明：
+\par 设$M$是无限集，则$M \neq \varnothing $
+\par 故$\exists e_{1} \in M$
+\par 易知$M \setminus \left\{e_{1}\right\} \neq \varnothing$故$\exists e_{2} \in M\setminus \left\{e_{1}\right\} $且$e_{2} \neq e_{1}$
+\par 依此类推\dots \dots
+\par 易知$M \setminus \left\{e_{1},e_{2},\dots,e_{n-1}\right\} \neq \varnothing$故$\exists e_{n} \in M\setminus \left\{e_{1},e_{2},\dots,e_{n-1}\right\} $且$e_{1},\dots,e_{n}$互异
+\par 令$M_{0} = \left\{e_{1},e_{2},\dots,e_{n},\dots\right\} $，则$M_{0} \subset M$
+\par 因$M_{0}$可排成无穷序列，故$M_{0}$是可数集，得证
+
+\begin{wa}
+\pmb{注2：}可数集在无限集中有最小的基数，即若$A$是无限集，$B$是可数集，则$\overline{\overline{A}} \geqslant \overline{\overline{B}}$    
+\end{wa}
+\noindent 证明：
+\par 已知$A$是无限集，由Th1可知$A$存在一个可数集，记为$A^{*}$，$A^{*}\subset A$
+\par 因$A^{*}$和$B$都为可数集，它们都能与$\mathbb{Z}^{+}$对等，故$A^{*}\thicksim B$
+\par 故$\overline{\overline{B}} = \overline{\overline{A^{*}}} \leqslant \overline{\overline{A}}$
+
+\begin{td}
+\pmb{Theorem \ 2：}可数集合的任何\uline{无限}子集必为可数集合，从而
+\par \quad \quad \quad \quad 可数集合的\uline{任意}子集或者是有限集或者是可数集    
+\end{td}
+\noindent 证明：
+\par 设$A$是可数集合，$A^{*}$是$A$的无限子集
+\par 因$A^{*}\subset A$，故$\overline{\overline{A^{*}}} \leqslant \overline{\overline{A}}$
+\par 而$A^{*}$是无限集，由注2，有$\overline{\overline{A^{*}}} \geqslant \overline{\overline{A}}$
+\par 由$Bernstein$定理，$\overline{\overline{A^{*}}} = \overline{\overline{A}}$
+\par 故$A^{*}\thicksim A$，故$A^{*}$是可数集
+
+\begin{td}
+\pmb{Theorem \ 3：}设$A$为可数集，$B$为有限集或可数集，则$A \cup B$为可数集    
+\end{td}
+\noindent 证明：
+\par \ding{172}当$A \cap B = \varnothing $
+\par 已知$A$是可数集，记为$A = \left\{a_{1},a_{2},\dots,a_{n},\dots\right\} $
+\par \romannumeral1. 若$B$是有限集，记为$B = \left\{b_{1},b_{2},\dots,b_{n}\right\} $
+\par \quad 则$A \cup B = \left\{b_{1},b_{2},\dots,b_{n},a_{1},a_{2},\dots,a_{n},\dots\right\} $
+\par \quad 故$A \cup B$为可数集
+\par \romannumeral2. 若$B$是可数集，记为$B = \left\{b_{1},b_{2},\dots,b_{n},\dots\right\} $
+\par \quad 则$A \cup B = \left\{a_{1},b_{1},a_{2},b_{2},\dots,a_{n},b_{n},\dots\right\} $
+\par \quad 故$A \cup B$为可数集
+\par \ding{173}当$A \cap B \neq \varnothing $
+\par 令$B^{*} = B \setminus A$，则$A \cap B^{*} = \varnothing$，且$A \cup B = A \cup B^{*}$
+\par 因$B^{*} \subset B$，故$B^{*}$为有限集或可数集
+\par 由\ding{172}知$A \cup B^{*}$应是可数集，故$A \cup B$是可数集
+
+\begin{la}
+\pmb{推论：}设$A_{i}\left(i =1,2,\dots,n\right) $是有限集或可数集，则$\bigcup \limits_{i=1}^{n}A_{i}$也是有限集或可数集
+\par \quad 若至少一个是可数集，则$\bigcup \limits_{i=1}^{n}A_{i}$是可数集    
+\end{la}
+\noindent 证明：
+\par \ding{172} 对$\forall i \in \mathbb{Z^{+}}$，$A_{i}$是有限集，则$\bigcup \limits_{i=1}^{n}A_{i}$是有限集显然
+\par \ding{173} 若$\exists i_{0} \in \mathbb{Z}^{+}$，$A_{i_{0}}$是可数集，则$\bigcup \limits_{i=1}^{n}A_{i} = A_{i_{0}}\cup A_{1}\cup A_{2}\cup \dots\cup A_{i_{0}-1}\cup A_{i_{0}+1}\cup \dots\cup A_{n}$
+\par \quad 由Th3可知：$A_{i_{0}}\cup A_{1}$是可数集，$A_{i_{0}}\cup A_{1}\cup A_{2}$是可数集
+\par \quad 依此类推$\bigcup \limits_{i=1}^{n}A_{i}$是可数集
+
+\begin{wa}
+\pmb{注3：}设$A_{i}\left(i =1,2,3,\dots\right) $是互不相交的非空有限集，则$\bigcup \limits_{i=1}^{\infty}A_{i}$是可数集    
+\end{wa}
+\noindent 证明：
+\par 记：
+\begin{align*}
+    A_{1} & =\left\{a_{11},a_{12},\dots,a_{1N_{1}}\right\} \\
+    A_{2} & =\left\{a_{21},a_{22},\dots,a_{2N_{2}}\right\} \\
+    & \vdots \\
+    A_{n} & =\left\{a_{n1},a_{n2},\dots,a_{nN_{n}}\right\} \\
+    & \vdots 
+\end{align*}
+\par 则：
+$$\bigcup \limits_{i=1}^{\infty}A_{i} = \left\{a_{11},a_{12},\dots,a_{1N_{1}},a_{21},a_{22},\dots,a_{2N_{2}},\dots,a_{n1},a_{n2},\dots,a_{nN_{n}},\dots\right\}$$
+\par 故：$\bigcup \limits_{i=1}^{\infty}A_{i}$是可数集,得证
+
+\begin{td}
+\pmb{Theorem \ 4：}设$A_{i}\left(i =1,2,3,\dots\right) $是可数集，则$\bigcup \limits_{i=1}^{\infty}A_{i}$是可数集    
+\end{td}
+\noindent 证明：
+\par \ding{172}若$A_{1},\dots,A_{n},\dots$互不相交
+\par \quad 已知对$\forall i \in \mathbb{Z}^{+}$，$A_{i}$是可数集
+\par \quad $A_{i}$可记为：
+\begin{align*}
+    A_{1} & =\left\{a_{11},a_{12},a_{13},a_{14},\dots\right\} \\
+    A_{2} & =\left\{a_{21},a_{22},a_{23},a_{24},\dots\right\} \\
+    A_{3} & =\left\{a_{31},a_{32},a_{33},a_{34},\dots\right\} \\
+    A_{4} & =\left\{a_{41},a_{42},a_{43},a_{44},\dots\right\} \\
+    & \vdots 
+\end{align*}
+\par \quad 按对角线顺序将$\bigcup \limits_{i=1}^{\infty}A_{i}$排成无穷序列：
+$$a_{11},a_{12},a_{21},a_{31},a_{22},a_{13},a_{14},a_{23},a_{32},a_{41},\dots$$
+\par \quad 故$\bigcup \limits_{i=1}^{\infty}A_{i}$是可数集
+\par \ding{173}若$A_{1},\dots,A_{n},\dots$有相交部分
+\par \quad 令\footnote{将相交的集合重新构造的常用方法，构造后的集合的并集与原来的集合的并集相等}：
+\begin{align*}
+    A^{*} & = A_{1} \\
+    A^{*}_{2} & = A_{2} \setminus A_{1} \\
+    \vdots \\
+    A^{*}_{i} & = A_{i} \setminus \left(\bigcup \limits_{j=1}^{i-1}A_{j}\right) \\
+    \vdots 
+\end{align*}
+\par \quad \romannumeral1. 当对$\forall i \neq j$时，有$A^{*}_{i} \cap A^{*}_{j} = \varnothing $，下证\romannumeral1.成立：
+\par \quad \quad 不妨设 $i > j$，则$i-1 \geqslant j$
+$$A^{*}_{i} \cap A^{*}_{j} = \left[A_{i} \setminus \left(\bigcup \limits_{k=1}^{i-1}A_{k}\right)\right] \cap \left[A_{j} \setminus \left(\bigcup \limits_{l=1}^{j-1}A_{l}\right)\right] \subset \left(A_{i} \setminus A_{j}\right) \cap A_{j} = \varnothing$$
+\par \quad \romannumeral2. 对$\forall n \in \mathbb{N}$，有$\bigcup \limits_{i=1}^{n}A_{i} = \bigcup \limits_{i=1}^{n}A_{i}^{*}$，下证\romannumeral2.成立：
+\par \quad \quad 数学归纳法证明：
+\par \quad \quad 当$n = 1$时，$A_{1} = A_{1}^{*}$成立
+\par \quad \quad 假设当$n = n - 1$时，$\bigcup \limits_{i=1}^{n-1}A_{i} = \bigcup \limits_{i=1}^{n-1}A_{i}^{*}$成立
+\par \quad \quad 下证当$n = n$时，$\bigcup \limits_{i=1}^{n}A_{i} = \bigcup \limits_{i=1}^{n}A_{i}^{*}$成立
+\par \quad \quad 则：
+\begin{align*}
+    \bigcup \limits_{i=1}^{n}A_{i}^{*} & = \left(\bigcup \limits_{i=1}^{n-1}A_{i}^{*} \right) \cup A_{n}^{*} \\
+    & = \left(\bigcup \limits_{i=1}^{n-1}A_{i} \right) \cup \left[A_{n} \cap \left(\bigcup \limits_{i=1}^{n-1}A_{i} \right)^{c} \ \right] \\
+    & = \left[\left(\bigcup \limits_{i=1}^{n-1}A_{i} \right) \cup A_{n}\right] \cap \left[\left(\bigcup \limits_{i=1}^{n-1}A_{i} \right) \cup \left(\bigcup \limits_{i=1}^{n-1}A_{i}\right)^{c} \ \right] \\
+    & = \bigcup \limits_{i=1}^{n}A_{i}
+\end{align*}
+\par \quad \romannumeral3.当$n \to \infty$，有$\bigcup \limits_{i=1}^{\infty}A_{i} = \bigcup \limits_{i=1}^{\infty}A_{i}^{*}$， 下证\romannumeral3.成立：
+\begin{align*}
+    \bigcup \limits_{i=1}^{\infty}A_{i} = \bigcup \limits_{n=1}^{\infty}\bigcup \limits_{i=1}^{n}A_{i} = \bigcup \limits_{n=1}^{\infty}\bigcup \limits_{i=1}^{n}A_{i}^{*} = \bigcup \limits_{i=1}^{\infty}A_{i}^{*}
+\end{align*}
+\par \quad \quad 对$\forall i \in \mathbb{N}$，有$A_{i}^{*} \subset A_{i}$
+\par \quad \quad 对$\forall i \in \mathbb{N}$，$A_{i}^{*}$是有限集或可数集
+\par \quad \quad 故：
+\begin{align*}
+    \bigcup \limits_{i=1}^{\infty}A_{i} = \bigcup \limits_{i=1}^{\infty}A_{i}^{*} = \underbrace{\bigcup \limits_{i=1}^{\infty}A_{i}^{*}} _\text{$A_{i}^{*} \neq \varnothing$} = \uline{\underbrace{\left(\bigcup A_{i}^{*}\right)}_\text{$A_{i}^{*} \neq \varnothing$且是有限集}}_{B_{1}} \cup \uline{\underbrace{\left(\bigcup A_{i}^{*}\right)}_\text{$A_{i}^{*}$是可数集}}_{B_{2}}
+\end{align*}
+\par \quad \quad 若非空有限集的$A_{i}^{*}$只有有限个，则$B_{1}$是有限集；
+\par \quad \quad 若非空有限集的$A_{i}^{*}$有无限个(可数个)，则由注3，$B_{1}$是可数集
+\par \quad \quad 若可数集的$A_{i}^{*}$只有有限个，则由Th3推论知$B_{2}$是可数集；
+\par \quad \quad 若可数集的$A_{i}^{*}$有无限个(可数个)，则由\ding{172}，$B_{2}$是可数集
+\par 综上，由Th3可知，$\bigcup \limits_{i=1}^{\infty}A_{i} = B_{1} \cup B_{2}$是可数集
+
+\begin{wa}
+\pmb{注4：}1.当$A_{i}$均为可数集时，定理3的推论可简记为
+$$n \cdot a = \underbrace{a + a + \dots + a }_\text{n个}= a$$
+\quad \quad \quad 2.定理4的结论可简记为
+$$a \cdot a = \underbrace{a + a + \dots + a }_\text{可数个}= a$$    
+\end{wa}
+
+\begin{td}
+\pmb{Theorem \ 5：}有理数的全体是可数集   
+\end{td}
+\noindent 证明：
+\par 令$A_{i} = \left\{\dfrac{1}{i} \ ,\dfrac{2}{i} \ ,\dfrac{3}{i} \ ,\dots\right\} ,i = 1,2,3,\dots$
+\par 故对$\forall i \in \mathbb{Z}^{+}$，$A_{i}$是可数集，由Th4可知，$\mathbb{Q}^{+} = \bigcup \limits_{i=1}^{\infty}A_{i}$是可数集
+\par 令$\varphi : \mathbb{Q}^{+} \to \mathbb{Q}^{-} , x \mapsto -x$，易知$\varphi $是双射，故$\mathbb{Q}^{+} \thicksim \mathbb{Q}^{-}$，故$\mathbb{Q}^{-}$是可数集
+\par 由Th3推论可知，$\mathbb{Q} = \mathbb{Q}^{+} \cup \mathbb{Q}^{-} \cup \left\{0\right\} $是可数集
+
+\begin{wa}
+\pmb{注5：}虽然有理数在实数中稠密，但有理数集只与稀疏分布的正整数集一一对应    
+\end{wa}
+
+\begin{eg}
+\pmb{例1：}设集合$A$中的元素都是直线上的开区间，满足：若开区间$K$，$J \in A$，$K \neq J$，则$K\cap J = \varnothing$
+\par 求证：$A$是可数集或有限集    
+\end{eg}
+\noindent 证明：
+\par 对$\forall K \in A$，由实数集的稠密性可知，$\exists r \in \mathbb{Q} $，$ s.t. \ r \in K$
+\par 在每个$K$中取且只取一个有理数，记为$r_{K}$，令映射$\varphi : A \to \mathbb{Q} , K \mapsto \varphi (K) = r_{K}$
+\par 下证：$\varphi $是单射
+\par \quad \quad \quad 对$\forall K,T \in A \land K \neq J$
+\par \quad \quad \quad 因$K\cap J = \varnothing$，$r_{K} \in K$，$r_{J} \in J$，故$r_{K} \neq r_{J}$，即$\varphi (K) \neq \varphi (J)$
+\par \quad \quad \quad 故$\varphi $是单射，由1.3注可知$\overline{\overline{A}} \leqslant \overline{\overline{\mathbb{Q}}}$
+\par \quad \quad \quad 因$\mathbb{Q}$是可数集，$A$是可数集或有限集
+
+\begin{td}
+\pmb{Theorem \ 6：}设$A_{i}\left(i =1,2,\dots,n\right) $是可数集，则$A = A_{1} \times A_{2} \times \dots \times A_{n}$是可数集    
+\end{td}
+\noindent 证明：数学归纳法：
+\par 当$n = 1$时，$A = A_{1}$是可数集
+\par 假设当$n = n - 1$时成立，即$A_{1} \times A_{2} \times \dots \times A_{n-1}$是可数集
+\par 已知$A_{n}$是可数集，可记：$A_{n} = \left\{x_{1},x_{2},\dots,x_{k},\dots\right\} = \bigcup \limits_{k=1}^{\infty}\left\{x_{k}\right\} $
+\par 令$\widehat{A_{k}} = A_{1} \times \dots \times A_{n-1} \times \left\{x_{k}\right\} $
+\par 映射$\varphi : \widehat{A_{k}} \to A_{1} \times \dots \times A_{n-1}$，$ \left(a_{1},\dots,a_{n-1},x_{k}\right) \mapsto \left(a_{1},\dots,a_{n-1}\right) $
+\par 易知$\varphi $是双射，故$\widehat{A_{k}} \thicksim A_{1} \times \dots \times A_{n-1} $，故对$\forall k \in \mathbb{Z}^{+}$，$\widehat{A_{k}} $是可数集
+\par 因$A = A_{1} \times \dots \times A_{n} = \bigcup \limits_{k=1}^{\infty}\left(A_{1} \times \dots \times A_{n-1} \times \left\{x_{k}\right\} \right) = \bigcup \limits_{k=1}^{\infty}\widehat{A_{k}}$
+\par 由Th4可知，$A$是可数集
+
+\begin{eg}
+\pmb{例2：}平面上坐标为有理数的点的全体构成的集合为可数集    
+\end{eg}
+\noindent 证明：$A = \left\{\left(x,y\right) : x \in \mathbb{Q} , y \in \mathbb{Q}\right\} = \mathbb{Q} \times \mathbb{Q}$
+
+\begin{eg}
+\pmb{例3：}元素$\left(n_{1},n_{2},\dots,n_{k}\right) $是由$k$个正整数组成的，其全体是可数集    
+\end{eg}
+\noindent 证明：\ $\underbrace{\mathbb{Z}^{+} \times \mathbb{Z}^{+} \times \dots \times \mathbb{Z}^{+}} _\text{k个}$
+
+\begin{eg}
+\pmb{例4：}整系数多项式
+$$a_{0}x^{n} + a_{1}x^{n-1} + \dots + a_{n-1}x + a_{n}$$
+\par \quad 的全体$A$是可数集    
+\end{eg}
+\noindent 证明：
+\par 对$\forall n \in \mathbb{N}$，记$A_{n} = \left\{a_{0}x^{n} + a_{1}x^{n-1} + \dots + a_{n-1}x + a_{n} : a_{0} \in \mathbb{Z} \setminus \left\{0\right\}  , \  a_{1},\dots,a_{n} \in \mathbb{Z}\right\} $
+\par 令映射$\varphi : A_{n} \to \mathbb{Z} \setminus \left\{0\right\} \times \underbrace{\mathbb{Z} \times \dots \times \mathbb{Z}}_\text{n个}$， \ $a_{0}x^{n} + a_{1}x^{n-1} + \dots + a_{n-1}x + a_{n} \mapsto \left(a_{0},a_{1},\dots,a_{n}\right) $
+\par 易知$\varphi$是双射
+\par 故对$\forall n \in \mathbb{N}$，$A_{n}$是可数集
+\par 记$A_{0} = \mathbb{Z}$，则$A = \bigcup \limits_{n=0}^{\infty}A_{n}$是可数集
+
+\begin{wa}
+\pmb{注6：}可数个有限集的并集是有限集或可数集 \ \textcolor{red}{$\bigstar$}    
+\end{wa}
+\noindent 证明：
+\par 设$\left\{A_{i}\right\} _{i=1}^{\infty}$是可数个有限集，下证$\bigcup \limits_{i=1}^{\infty}A_{i}$是有限集或可数集
+\par 令$A_{1}^{*}$，则$A_{i}^{*} = A_{i} \setminus \left(\bigcup \limits_{j=1}^{i-1}A_{j}\right) $
+\par 对$\forall i \geqslant 2$，$\left\{A_{i}^{*}\right\}$互不相交且$\bigcup \limits_{i=1}^{\infty}A_{i} = \bigcup \limits_{i=1}^{\infty}A_{i}^{*}$
+\par 因对$\forall i \in \mathbb{N}$，有$A_{i}^{*} \subset A_{i}$，故对$\forall i \in \mathbb{N}$，$A_{i}^{*}$是有限集
+\par \ding{172}若只有有限个$A_{i}^{*}$不为$\varnothing$，则
+\par \quad $\bigcup \limits_{i=1}^{\infty}A_{i} = \bigcup \limits_{i=1}^{\infty}A_{i}^{*}(A_{i}^{*} \neq \varnothing)$是有限集
+\par \ding{173}若有无限个(可数个)$A_{i}^{*}$不为$\varnothing$，则
+\par \quad $\bigcup \limits_{i=1}^{\infty}A_{i} = \bigcup \limits_{i=1}^{\infty}A_{i}^{*}(A_{i}^{*} \neq \varnothing)$是可数个互不相交的非空有限集的并，
+\par \quad  由注3可知，$\bigcup \limits_{i=1}^{\infty}A_{i}$是可数集
+
+\begin{td}
+\pmb{Theorem \ 6：}代数数(整系数多项式的根)的全体$B$是可数集    
+\end{td}
+\noindent 证明：
+\par 令$A = $ \ \{整系数多项式\}  
+\par 已知$A$是可数集，可记$A = \left\{P_{1},P_{2},\dots,P_{k},\dots\right\} $
+\par 对$\forall k \in \mathbb{N}$，记$B_{k} = $ \ \{$P_{k}$的根\}  
+\par 则对$\forall k \in \mathbb{N}$，$B_{k}$有根
+\par 故$B = \bigcup \limits_{k=1}^{\infty}B_{k}$是有限集或可数集
+\par 因对$\forall n \in \mathbb{N}$，$n$是多项式$n-1$的根
+\par 故对$\forall n \in \mathbb{N}$，$n \in B$
+\par 故$\mathbb{N} \subset B$，$B$是可数集
